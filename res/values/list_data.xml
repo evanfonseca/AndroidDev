@@ -1,0 +1,13 @@
+<resources>
+
+ <!-- string ids for definicion.xml -->
+     <string name="definition">Definition</string>
+    <string name="logar1">Login</string>
+    <string name="logout1">Logout</string>
+    <string name="register1">Register</string>
+    <string name="rcpassword">Recuperar Password</string>
+    <string name="altlingua">Alterar Lingua</string>
+    <string name="deflocal">Definição da Localização</string>
+    <string name="sair">Sair da Aplicação</string>
+    
+</resources>

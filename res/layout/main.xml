@@ -1,68 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-===========================================================================
- Copyright (c) 2012 Three Pillar Global Inc. http://threepillarglobal.com
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sub-license, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
- ===========================================================================
--->
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#f1eee9"
-    android:orientation="vertical"
-    >         
+<RelativeLayout 
+     android:gravity="center_horizontal" 
+     android:orientation="vertical"
+     android:id="@id/RootView" 
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+      
+    <ImageView
+          android:id="@id/background_image" 
+          android:background="@drawable/foot"
+          android:layout_width="fill_parent" 
+          android:layout_height="fill_parent" 
+          android:scaleType="centerCrop"/>
+    
     <LinearLayout 
-    android:orientation="horizontal"
-    android:id="@+id/topbar"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:padding="7dp"
-    android:background="@drawable/blue_gradient"
-    >   
-	    <TextView 
-			android:id="@+id/textview"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_gravity="center_vertical"
-			android:textColor="#ffffff"
-			android:textSize="14sp"
-			android:layout_marginLeft="5dp"
-			android:textStyle="bold"
-		/>
-	</LinearLayout>
-	<View
-        android:id="@+id/view01"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#313437" />
-    <ListView 
-		android:id="@+id/listview"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:layout_margin="10dp"
-		android:background="@drawable/list_gradient"
-		android:scrollingCache="false"
-		android:divider="#e4e4e4"
-		android:dividerHeight="2px"
-	/>    
-</LinearLayout>
+        android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:layout_marginBottom="280.0dip">
+        
+        <TextView
+             android:textAppearance="?android:textAppearanceLarge" 
+             android:textSize="48.0dip" 
+             android:textStyle="bold"
+             android:textColor="#ffffffff"
+             android:gravity="bottom"
+             android:id="@id/app_name"
+             android:layout_width="fill_parent" 
+             android:layout_height="wrap_content" 
+             android:layout_marginLeft="15.0dip"
+             android:layout_marginTop="5.0dip" 
+             android:layout_marginRight="15.0dip" 
+             android:layout_marginBottom="-5.0dip"
+             android:text="@string/welcome"
+             android:shadowColor="#ff000000"
+             android:shadowDx="2.0"
+             android:shadowDy="2.0" 
+             android:shadowRadius="2.0" />
+        
+        <TextView 
+            android:textAppearance="?android:textAppearanceMedium" 
+            android:textSize="18.0dip" 
+            android:textStyle="bold" 
+            android:textColor="#ffffffff" 
+            android:id="@id/app_claim" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18.0dip"
+            android:layout_marginTop="-5.0dip"
+            android:text="@string/pp" 
+            android:shadowColor="#ff000000" 
+            android:shadowDx="1.0" 
+            android:shadowDy="1.0" 
+            android:shadowRadius="1.0" />
+        
+    </LinearLayout>
+    <LinearLayout 
+        android:orientation="vertical" 
+        android:id="@id/linearLayout1" 
+        android:layout_width="fill_parent" 
+        android:layout_height="200.0dip" 
+        android:layout_alignParentBottom="true">
+        
+        <LinearLayout 
+            android:id="@id/linearLayout2" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent" 
+            android:layout_weight="1.0">
+            
+            
+            <LinearLayout 
+                
+                     android:id="@+id/cidade_button"
+                     android:gravity="center"
+                     android:orientation="vertical" 
+                     android:background="#cc000000"
+                     android:layout_width="fill_parent"
+                     android:layout_height="fill_parent"
+                     android:layout_marginLeft="2.0dip" 
+                     android:layout_marginTop="1.0dip"
+                     android:layout_marginRight="1.0dip" 
+                     android:layout_marginBottom="2.0dip"
+                     android:clickable="true"
+                     android:focusable="true"
+                     android:layout_weight="1.0">
+		   
+                
+                <ImageView 
+                    
+                     android:background="@drawable/front_map"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+                
+                <TextView 
+                      android:textStyle="bold"
+                      android:textColor="#ffffffff"
+                      android:layout_width="wrap_content" 
+                      android:layout_height="wrap_content" 
+                      android:layout_marginTop="3.0dip" 
+                      android:text="@string/city"/>
+                
+            </LinearLayout>
+            <LinearLayout 
+                
+                 android:id="@+id/place_button"
+                 android:gravity="center" 
+                 android:orientation="vertical" 
+                 android:background="#cc000000" 
+                 android:addStatesFromChildren="false" 
+                 android:layout_width="fill_parent" 
+                 android:layout_height="fill_parent"
+                 android:layout_marginLeft="2.0dip" 
+                 android:layout_marginTop="2.0dip" 
+                 android:layout_marginRight="1.0dip" 
+                 android:layout_marginBottom="1.0dip" 
+                 android:layout_weight="1.0">
+                 
+                <ImageView 
+                    android:id="@id/foo1" 
+                    android:background="@drawable/front_places" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" />
+                
+                <TextView 
+                    
+                    android:textStyle="bold" 
+                    android:textColor="#ffffffff" 
+                    android:id="@id/textView1" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:layout_marginTop="3.0dip" 
+                    android:text="@string/pois" />
+                
+            </LinearLayout>
+            <LinearLayout 
+                
+                android:gravity="center" 
+                android:orientation="vertical" 
+                android:id="@id/gallery_button" 
+                android:background="#cc000000" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent" 
+                android:layout_marginLeft="1.0dip" 
+                android:layout_marginTop="2.0dip" 
+                android:layout_marginRight="1.0dip" 
+                android:layout_marginBottom="1.0dip" 
+                android:layout_weight="1.0">
+                
+                <ImageView 
+                    android:id="@id/foo4" 
+                    android:background="@drawable/front_media" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" />
+                
+                <TextView 
+                    android:textStyle="bold" 
+                    android:textColor="#ffffffff" 
+                    android:id="@id/textView2" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:layout_marginTop="3.0dip"
+                     android:text="@string/gallery" />
+            </LinearLayout>
+            <LinearLayout 
+                android:gravity="center" 
+                android:orientation="vertical" 
+                android:id="@id/map_button" 
+                android:background="#cc000000"
+                 android:layout_width="fill_parent" 
+                 android:layout_height="fill_parent" 
+                 android:layout_marginLeft="1.0dip" 
+                 android:layout_marginTop="2.0dip" 
+                 android:layout_marginRight="2.0dip" 
+                 android:layout_marginBottom="1.0dip" 
+                 android:layout_weight="1.0">
+                
+                <ImageView 
+                      android:id="@id/foo3"
+                      android:background="@drawable/front_map" 
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" />
+                
+                <TextView 
+                    android:textStyle="bold"
+                     android:textColor="#ffffffff" 
+                     android:id="@id/textView3" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" 
+                     android:layout_marginTop="3.0dip" 
+                     android:text="@string/map" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout 
+             android:id="@id/linearLayout3" 
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent" 
+             android:layout_weight="1.0">
+            <LinearLayout 
+                android:gravity="center"
+                 android:orientation="vertical" 
+                 android:id="@id/info_button" 
+                 android:background="#cc000000"
+                  android:layout_width="fill_parent" 
+                  android:layout_height="fill_parent" 
+                  android:layout_marginLeft="2.0dip" 
+                  android:layout_marginTop="1.0dip"
+                   android:layout_marginRight="1.0dip" 
+                   android:layout_marginBottom="2.0dip" 
+                   android:layout_weight="1.0">
+                
+                <ImageView 
+                     android:id="@id/imageButton1"
+                     android:background="@drawable/front_info" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" />
+                
+                <TextView 
+                    android:textStyle="bold"
+                     android:textColor="#ffffffff"
+                      android:id="@id/textView4" 
+                      android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                        android:layout_marginTop="3.0dip" 
+                        android:text="@string/info" />
+            </LinearLayout>
+            
+            <LinearLayout 
+                
+                  android:gravity="center"
+                  android:orientation="vertical" 
+                  android:id="@id/favorites_button"
+                  android:background="#cc000000"
+                  android:layout_width="fill_parent" 
+                  android:layout_height="fill_parent" 
+                  android:layout_marginLeft="2.0dip" 
+                  android:layout_marginTop="1.0dip"
+                  android:layout_marginRight="1.0dip" 
+                  android:layout_marginBottom="2.0dip" 
+                  android:layout_weight="1.0">
+                
+                <ImageView 
+                    android:id="@id/foo5" 
+                    android:background="@drawable/front_favs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView 
+                    
+                    
+                    android:textStyle="bold" 
+                    android:textColor="#ffffffff"
+                    android:id="@id/textView5" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:layout_marginTop="3.0dip" 
+                    android:text="@string/favorites" />
+            </LinearLayout>
+            
+            <LinearLayout 
+                android:gravity="center"
+                 android:orientation="vertical" 
+                 android:id="@+id/event_button"
+                 android:background="#cc000000"
+                  android:layout_width="fill_parent" 
+                  android:layout_height="fill_parent" 
+                  android:layout_marginLeft="2.0dip" 
+                  android:layout_marginTop="1.0dip"
+                   android:layout_marginRight="1.0dip" 
+                   android:layout_marginBottom="2.0dip" 
+                   android:layout_weight="1.0">
+                
+                <ImageView  
+                    android:id="@id/foo6" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:src="@drawable/front_inapps"  />
+                
+                <TextView 
+                     android:id="@id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dip"
+                    android:text="@string/event"
+                    android:textColor="#ffffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            
+            
+            <LinearLayout 
+                
+                android:gravity="center"
+                 android:orientation="vertical" 
+                 android:id="@+id/definition_button"
+                 android:background="#cc000000"
+                  android:layout_width="fill_parent" 
+                  android:layout_height="fill_parent" 
+                  android:layout_marginLeft="2.0dip" 
+                  android:layout_marginTop="1.0dip"
+                   android:layout_marginRight="1.0dip" 
+                   android:layout_marginBottom="2.0dip" 
+                   android:layout_weight="1.0">
+		   
+                
+                <ImageView 
+                    
+                    android:id="@id/foo6" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:src="@drawable/front_inapps" />
+                
+                <TextView 
+                    
+                       android:textStyle="bold"
+                       android:textColor="#ffffffff"
+                       android:id="@id/textView4" 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="3.0dip" 
+                       android:text="@string/definition"/>
+                
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+    
+    
+    <RelativeLayout 
+        
+        android:gravity="right" 
+        android:id="@id/lay_ads" 
+        android:background="#ff000000" 
+        android:visibility="gone"
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent">
+        
+        <ImageView
+            android:gravity="center" 
+            android:id="@id/banner" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent"
+            android:layout_margin="40.0dip" 
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+        
+        <ImageView 
+            android:id="@id/banner_close" 
+            android:background="@drawable/close" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip" 
+            android:layout_marginRight="20.0dip" 
+            android:layout_alignParentRight="true" />
+        
+    </RelativeLayout>
+    
+    
+     
+</RelativeLayout>

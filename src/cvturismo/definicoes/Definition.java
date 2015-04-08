@@ -1,17 +1,23 @@
 package cvturismo.definicoes;
 
-
-
-import cvturismo.R;
-
 import android.net.Uri;
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cvturismo.R;
+
 public class Definition extends Activity{
 
+	
+	 
+    protected void onCreate(Bundle savedInstanceState) {  
+        super.onCreate(savedInstanceState);  
+        setContentView(R.layout.definition);  
+        
+    }
 	public boolean onCreateOptionsMenu(Menu menu) {  
         // Inflate the menu; this adds items to the action bar if it is present.  
         getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu  
@@ -35,7 +41,7 @@ public class Definition extends Activity{
             return true;
  
         case R.id.logar:
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, Login.class);
             return true;
  
         case R.id.rpassword:

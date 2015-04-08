@@ -83,7 +83,7 @@ public class ProfileActivity extends Activity {
 			editor.putBoolean(Constant.PREF_IS_LOGGED, false);
 			editor.commit();
 		
-		startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+		startActivity(new Intent(ProfileActivity.this, Login.class));
 		finish();
 	}
 }

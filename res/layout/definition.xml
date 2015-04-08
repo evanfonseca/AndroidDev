@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="@string/definition"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"  />
+
+    <TextView
+        android:id="@+id/logar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="22dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/login" />
+    
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/logout" />
+
+    <TextView
+        android:id="@+id/localizacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lingua"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/deflocal" />
+
+    <TextView
+        android:id="@+id/registar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/register"/>
+
+    <TextView
+        android:id="@+id/rpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/rcpassword" />
+
+    <TextView
+        android:id="@+id/lingua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/altlingua" />
+
+    
+ <TextView
+        android:id="@+id/sair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lingua"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:autoLink="web"
+        android:background="#ADD8E6"
+        android:text="@string/sair" />
+   
+    
+ </LinearLayout>

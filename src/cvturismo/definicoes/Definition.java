@@ -1,23 +1,18 @@
 package cvturismo.definicoes;
 
-import android.net.Uri;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import cvturismo.R;
 
 public class Definition extends Activity{
 
 	
 	 
-    protected void onCreate(Bundle savedInstanceState) {  
-        super.onCreate(savedInstanceState);  
-        setContentView(R.layout.definition);  
-        
-    }
+   
+    
 	public boolean onCreateOptionsMenu(Menu menu) {  
         // Inflate the menu; this adds items to the action bar if it is present.  
         getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu  
@@ -42,15 +37,18 @@ public class Definition extends Activity{
  
         case R.id.logar:
             Intent i = new Intent(this, Login.class);
+            startActivity(i);
             return true;
  
         case R.id.rpassword:
             Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse("http://172.16.48.101/cvturismo/frontend/web/site/request-password-reset"));
+            startActivity(in);
             return true;
  
         case R.id.registar:
         	Intent inte = new Intent(Intent.ACTION_VIEW, Uri.parse("http://172.16.48.101/cvturismo/frontend/web/index.php?r=site%2Fsignup")); 
-            return true;
+        	startActivity(inte);
+        	return true;
  
         case R.id.localizacao:
             
@@ -61,6 +59,7 @@ public class Definition extends Activity{
             return true;
         case R.id.sair:
             finish();
+            System.exit(0);
             return true;
  
         default:

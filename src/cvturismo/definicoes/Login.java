@@ -16,13 +16,6 @@ import org.brickred.socialauth.android.SocialAuthListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-
-
-import cvturismo.R;
-
-
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -42,7 +35,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import cvturismo.R;
 import cvturismo.socialoauth.domain.Constant;
 import cvturismo.socialoauth.domain.User;
 
@@ -50,7 +43,12 @@ import cvturismo.socialoauth.domain.User;
 
 
 
-public class Login extends Activity implements OnClickListener{
+public class Login extends Definition implements OnClickListener{
+	
+	
+	
+	
+	
 	private SocialAuthAdapter socialAuth;
 	private TextView tvInfo;
 	private Button btLogin, btLoginf,btLoging;

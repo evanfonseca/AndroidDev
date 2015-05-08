@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CVTurismoMobile</string>
+    <string name="app_claim">De viajantes para viajantes</string>
+    <string name="MINUBE_API_KEY">4ba0bc9c71be127453fd04bd10dd43b7</string>
+    <string name="API_DOMAIN">api.minube.com</string>
+    <string name="LANG_ISO">pt</string>
+    <string name="data_directory">cache</string>
+    <string name="download_content_lay_first_text">Quer descarregar o conteúdo paro o Android para poder usar o guia offline?</string>
+    <string name="download_content_lay_second_text">Demorará alguns minutos, mas você pode continuar usando o guia</string>
+    <string name="ok_download_button">Sim, fazer o download</string>
+    <string name="ko_download_button">Não, deixar para depois</string>
+    <string name="pois">Lugares</string>
+    <string name="gallery">Galeria</string>
+    <string name="map">Mapa</string>
+    <string name="info">Info</string>
+    <string name="favorites">Favoritos</string>
+    <string name="inspiration">Inspire-se</string>
+    <string name="download_content">"Fazer o
+download"</string>
+    <string name="resume_download">"Fazer o
+download"</string>
+    <string name="cancel_download_content">"Cancelar o
+download"</string>
+    <string name="picture">foto</string>
+    <string name="pictures">fotos</string>
+    <string name="no_inapp">Esta guia ainda não tem nenhum Imprescindível</string>
+    <string name="no_fav">Você não salvou nenhum lugar como favorito</string>
+    <string name="call">Ligar</string>
+    <string name="buy">Reservar</string>
+    <string name="of">de</string>
+    <string name="see_cat_name">O que Ver</string>
+    <string name="eat_cat_name">Onde comer</string>
+    <string name="sleep_cat_name">Onde dormir</string>
+    <string name="localization">Localização</string>
+    <string name="wait_map">Espera</string>
+    <string name="oops">Oops!</string>
+    <string name="oops_msg">Ocorreu um problema ao fazer o download do conteúdo. Comprove a sua conexão e tente outra vez</string>
+    <string name="ok">Aceitar</string>
+    <string name="check_internet">Comprove a sua conexão e tente outra vez.</string>
+    <string name="downloaded">% download concluído</string>
+    <string name="connecting">Espera...</string>
+    <string name="finishing_download">Terminando...</string>
+    <string name="sdcard_not_mounted">Ocorreu um problema ao fazer o download do conteúdo.</string>
+    <string name="not_available_space">Ocorreu um problema ao fazer o download do conteúdo.</string>
+    <string name="about_inapp_author_text">Sobre o criador desse Imprescindível...</string>
+    <string name="new_experiences_inapp">Descubra _NUMBER_ experiências novas e imprescindíveis</string>
+    <string name="free_download">Fazer o download</string>
+    <string name="downloading">Fazendo download...</string>
+    <string name="downloaded_button_text">Download finalizado</string>
+    <string name="bundles_base_url">minubeguidesbundles.s3.amazonaws.com</string>
+</resources>

@@ -1,17 +1,22 @@
 package cvturismo.definicoes;
 
+
+import br.exemplosocialoauth.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import cvturismo.R;
+import android.view.Window;
+import android.view.WindowManager;
+
+import cvturismo.principal.ListViewActivity;
+
 
 public class Definition extends Activity{
 
 	
-	 
-   
     
 	public boolean onCreateOptionsMenu(Menu menu) {  
         // Inflate the menu; this adds items to the action bar if it is present.  
@@ -19,14 +24,10 @@ public class Definition extends Activity{
         return true;  
     }
 	
-	/**
-     * Event Handling for Individual menu item selected
-     * Identify single menu item by it's id
-     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-         
+    	  
         switch (item.getItemId())
         {
         case R.id.logout:
@@ -50,7 +51,7 @@ public class Definition extends Activity{
         	startActivity(inte);
         	return true;
  
-        case R.id.localizacao:
+        case R.id.location:
             
             return true;
  
@@ -65,8 +66,10 @@ public class Definition extends Activity{
         default:
             return super.onOptionsItemSelected(item);
         }
+    }   
+   
     }
   
 	
 
-}
+

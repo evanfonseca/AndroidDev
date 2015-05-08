@@ -40,11 +40,18 @@
     <string name="island">Ilha</string>
     <string name="city">Cidade</string>
     
+    <string name="definition">Definição</string>
+    <string name="deflocal">Definição de Localização</string>
+    <string name="rcpassword">Recuperar password</string>
+    <string name="altlingua">Alterar Lingua</string>
+    <string name="sair">Sair</string>
+    <string name="logout1">Logout</string>
+    <string name="register1">Registar</string>
     
     
-    <!-- string ids for main.xml -->
+          <!-- string ids for main.xml -->
 
-    <string name="welcome">Bemvindo</string>
+    <string name="welcome">Benv. CVTurismo</string>
     <string name="pp">De viajantes para vijantes</string>
     <string name="app_claim">De viajantes para viajantes</string>
     <string name="google_maps_api_key">0zYkHasjJiV0Fpnv8Dnl3r8d0cGkUDz93dO2PLw</string>

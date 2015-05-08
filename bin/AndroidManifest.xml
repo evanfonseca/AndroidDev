@@ -34,22 +34,49 @@
             android:name="cvturismo.definicoes.Login">
       </activity>
         <activity 
-            android:name="cvturismo.definicoes.Definition">
+            android:name="cvturismo.definicoes.DefinitionActivity">
         </activity>
-        <activity android:name="cvturismo.principal.AndroidListViewActivity">
-            
-        </activity>
+       
           <activity android:name="cvturismo.principal.SingleListItem" >
               
           </activity>
-      
+       
+       
+          <activity android:name="cvturismo.principal.ListViewActivity" >
+              
+          </activity>
+          <activity android:name="cvturismo.principal.Category_selector" >
+              
+          </activity>
+          
+          
+          <activity
+            android:name="cvturismo.gallery.GalleryMainActivity" >
+            
+             
+        </activity>
+        
+           <activity
+            android:name="cvturismo.maps.MapActivity">
+           
+        </activity>
+        
+       <activity
+            android:name="cvturismo.gallery.GalleryActivity">
+        </activity>
         <activity
             android:name="cvturismo.definicoes.ProfileActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" >
 		</activity>
 		
         <!-- Your API key needs to be added over here -->
-         
+         <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
          
     </application>
 

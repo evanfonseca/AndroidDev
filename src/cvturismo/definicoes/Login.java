@@ -1,7 +1,5 @@
 package cvturismo.definicoes;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +14,7 @@ import org.brickred.socialauth.android.SocialAuthListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.exemplosocialoauth.R;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,17 +34,13 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import cvturismo.R;
 import cvturismo.socialoauth.domain.Constant;
 import cvturismo.socialoauth.domain.User;
 
-
-
-
-
 public class Login extends Definition implements OnClickListener{
 	
-	
+	//Session Manager
+	SessionManager session;
 	
 	
 	
@@ -102,10 +97,14 @@ public class Login extends Definition implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_login);
 		
 		socialAuth = new SocialAuthAdapter(new ResponseListener());
 		
+		// Session Manager
+        session = new SessionManager(getApplicationContext());
+        
+        
 		// VIEWS
 			tvInfo = (TextView) findViewById(R.id.tvInfo);
 			btLogin = (Button) findViewById(R.id.btLogin);
@@ -333,6 +332,8 @@ public class Login extends Definition implements OnClickListener{
 				int success;
 				String username = user.getText().toString();
 				String password = pass.getText().toString();
+				// Check if username, password is filled				
+				if(username.trim().length() > 0 && password.trim().length() > 0){
 				try {
 					// Building Parameters
 					List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -352,12 +353,25 @@ public class Login extends Definition implements OnClickListener{
 					if (success == 1) {
 						Log.d("Login Successful!", json.toString());
 						// save user data
-						SharedPreferences sp = PreferenceManager
-								.getDefaultSharedPreferences(Login.this);
-						Editor edit = sp.edit();
-						edit.putString("username", username);
-						edit.commit();
+						User user = new User();
+						user.setFirstName(json.getString("firstName"));
+						user.setLastName(json.getString("lastName"));
+						user.setEmail(json.getString("email"));
+						user.setCountry(json.getString("country"));
+						user.setLanguage(json.getString("language"));
+						user.setLocation(json.getString("location"));
+						user.setProfileImageURL(json.getString("profileImage"));
 						
+						
+						// Save user session
+						session.createLoginSession("Android Hive", "anroidhive@gmail.com");
+						// START ACTIVITY
+							if(cont == 0){
+								cont++;
+								Intent intent = new Intent(Login.this, ProfileActivity.class);
+								intent.putExtra("user", user);
+								startActivity(intent);
+							}
 						
 						return json.getString(TAG_MESSAGE);
 					} else {
@@ -367,7 +381,7 @@ public class Login extends Definition implements OnClickListener{
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
-
+				}
 				return null;
 			}
 			

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="bt_sair_def">false</item>
+    <item type="id" name="bt_lingua_def">false</item>
+    <item type="id" name="bt_rpassword_def">false</item>
+    <item  type="id" name="bt_registar_def">false</item>
+    <item type="id" name="bt_location_def">false</item>
+    <item type="id" name="bt_logout_def">false</item>
+    <item  type="id" name="bt_login_def">false</item>
+    <item type="id" name="location">false</item>
     <item type="id" name="event">false</item>
     <item type="id" name="definition" >false</item>
     <item type="id" name="tag_image_loader" />

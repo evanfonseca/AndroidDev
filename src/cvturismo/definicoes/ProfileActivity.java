@@ -3,7 +3,13 @@ package cvturismo.definicoes;
 import java.util.Iterator;
 import java.util.Set;
 
-import cvturismo.R;
+import br.exemplosocialoauth.R;
+
+
+
+
+
+
 import cvturismo.socialoauth.domain.Constant;
 import cvturismo.socialoauth.domain.Image;
 import cvturismo.socialoauth.domain.User;

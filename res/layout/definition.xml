@@ -1,97 +1,389 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/AppTheme"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res/de.madvertise.android.sdk"
+      android:id="@id/RootView"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:background="#ff282a2e"
+      android:gravity="center_vertical"
+      android:orientation="vertical" >
+      
+   <LinearLayout 
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/textView1"
-       android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:gravity="center"
-        android:text="@string/definition"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"  />
+	<include layout="@layout/header_bar" />
+		  <ScrollView
+		        android:id="@+id/scrollView1"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" >
+		
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:orientation="vertical" >
+		            
+		    <LinearLayout
+		         android:orientation="vertical"
+		         android:layout_width="fill_parent"
+		         android:layout_height="wrap_content">
+		
+		        
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            android:autoLink="web"
+		            android:layout_width="fill_parent"
+		            android:layout_height="70.0dip">
+		            
+		            <ImageButton 
+		                
+		                android:background="@drawable/btn_ver_btn" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" />
+		            
+		            <LinearLayout android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                 <ImageView 
+		                   
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		                
+		            </LinearLayout>
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:id="@id/bt_login_def"
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp"
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/login" 
+		                    android:singleLine="true" />
+		              
+		            </LinearLayout>
+		        </RelativeLayout>
+		        
+		     <!-- Home Button Logout  -->   
+		     
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		         
+		            android:autoLink="web"
+		            android:layout_width="fill_parent" 
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		            
+		                android:background="@drawable/btn_ver_btn" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		            </LinearLayout>
+		            
+		            
+		            <LinearLayout 
+		                android:id="@id/bt_logout_def"
+		                android:gravity="center" 
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp" 
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/logout" 
+		                    android:singleLine="true" />
+		               
+		            </LinearLayout>
+		            
+		        </RelativeLayout>
+		      <!-- End Button Logout  -->     
+		       
+		        <!-- Button Definition location  -->   
+		        <RelativeLayout 
+		            
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            android:layout_width="fill_parent" 
+		            
+		            android:autoLink="web"
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		              
+		                android:background="@drawable/btn_ver_btn" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                 <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		                
+		            </LinearLayout>
+		            <LinearLayout 
+		                android:id="@id/bt_location_def"
+		                android:gravity="center" 
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    
+		                    android:textSize="18.0sp" 
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/deflocal" 
+		                    android:singleLine="true" />
+		                
+		                
+		                
+		            </LinearLayout>
+		        </RelativeLayout>
+		      
+		         <!-- End Button Definition Locationt  -->  
+		         
+		       <!-- Home Button Register -->     
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            
+		            android:autoLink="web"
+		            android:layout_width="fill_parent" 
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		               
+		                android:background="@drawable/btn_ver_btn"
+		                 android:layout_width="fill_parent" 
+		                 android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		            </LinearLayout>
+		            
+		            <LinearLayout 
+		                android:id="@id/bt_registar_def"
+		                android:gravity="center"
+		                 android:orientation="vertical" 
+		                 android:layout_width="fill_parent" 
+		                 android:layout_height="fill_parent" 
+		                 android:layout_marginLeft="60.0dip" 
+		                 android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp" 
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent"
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/register" 
+		                    android:singleLine="true" />
+		                
+		            </LinearLayout>
+		            
+		        </RelativeLayout>
+		        
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            android:layout_width="fill_parent" 
+		            
+		            android:autoLink="web"
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		                
+		                android:background="@drawable/btn_ver_btn"
+		                 android:layout_width="fill_parent" 
+		                 android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		            </LinearLayout>
+		            
+		             <LinearLayout 
+		                android:id="@id/bt_rpassword_def"
+		                android:gravity="center" 
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp"
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/rcpassword" 
+		                    android:singleLine="true" />
+		              
+		            </LinearLayout>
+		       </RelativeLayout>
+		            
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            android:layout_width="fill_parent" 
+		            android:autoLink="web"
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		                
+		                android:background="@drawable/btn_ver_btn"
+		                 android:layout_width="fill_parent" 
+		                 android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		            </LinearLayout>
+		            
+		              <LinearLayout 
+		                android:id="@id/bt_lingua_def"
+		                android:gravity="center" 
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp"
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/altlingua" 
+		                    android:singleLine="true" />
+		              
+		            </LinearLayout>
+		            </RelativeLayout>
+		            
+		        <RelativeLayout 
+		            android:gravity="center_vertical" 
+		            android:orientation="vertical" 
+		            android:layout_width="fill_parent" 
+		            android:autoLink="web"
+		            android:layout_height="70.0dip" 
+		            android:layout_marginTop="1.0dip">
+		            
+		            <ImageButton 
+		             
+		                 android:background="@drawable/btn_ver_btn"
+		                 android:layout_width="fill_parent" 
+		                 android:layout_height="fill_parent" />
+		            
+		            <LinearLayout 
+		                android:gravity="center" 
+		                android:layout_width="60.0dip" 
+		                android:layout_height="fill_parent">
+		                
+		                <ImageView 
+		                    android:layout_gravity="center" 
+		                    android:background="@drawable/btn_fav_clip" 
+		                    android:layout_width="wrap_content" 
+		                    android:layout_height="wrap_content" />
+		            </LinearLayout>
+		            
+		               <LinearLayout 
+		                android:id="@id/bt_sair_def"
+		                android:gravity="center" 
+		                android:orientation="vertical" 
+		                android:layout_width="fill_parent" 
+		                android:layout_height="fill_parent" 
+		                android:layout_marginLeft="60.0dip" 
+		                android:layout_marginRight="10.0dip">
+		                
+		                <TextView 
+		                    android:textSize="18.0sp"
+		                    android:textStyle="bold" 
+		                    android:textColor="@color/white" 
+		                    android:layout_width="fill_parent" 
+		                    android:layout_height="wrap_content" 
+		                    android:text="@string/sair" 
+		                    android:singleLine="true" />
+		              
+		            </LinearLayout>
+		            
+		        </RelativeLayout>
+		     
+		    </LinearLayout>
+		    
+		</LinearLayout>
+		      
+		</ScrollView>
+		    
+   </LinearLayout>
 
-    <TextView
-        android:id="@+id/logar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="22dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/login" />
-    
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/logout" />
-
-    <TextView
-        android:id="@+id/localizacao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lingua"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/deflocal" />
-
-    <TextView
-        android:id="@+id/registar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/register"/>
-
-    <TextView
-        android:id="@+id/rpassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/register"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/rcpassword" />
-
-    <TextView
-        android:id="@+id/lingua"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rpassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/altlingua" />
-
-    
- <TextView
-        android:id="@+id/sair"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lingua"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:autoLink="web"
-        android:background="#ADD8E6"
-        android:text="@string/sair" />
-   
-    
- </LinearLayout>
+</RelativeLayout>

@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true" >
+   
 	<LinearLayout
 	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
+	    android:layout_height="wrap_content"
 	    android:padding="5dp"
 	    android:orientation="vertical" >
-	    
+	    <include layout="@layout/header_bar" />
 	    <LinearLayout
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
@@ -50,9 +51,24 @@
 	    <Button
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:text="Sair"
+	        android:text="@string/sair"
 	        android:gravity="center"
 	        android:onClick="signOut" />
 	    
+	     <RelativeLayout 
+       
+        
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20.0dip"
+        android:paddingTop="200.0dip" >
+
+        <include         
+            layout="@layout/footer_bar" />
+
+    </RelativeLayout>
+   
 	</LinearLayout>
+	
+   
 </ScrollView>

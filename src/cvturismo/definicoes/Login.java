@@ -55,7 +55,7 @@ public class Login extends Definition implements OnClickListener{
 	
 	///////LOGIN NORMAL /////
 	private TextView mRegister, mForget;
-	private EditText user, pass;
+	private EditText us, pass;
 	private Button mSubmit;
 
 	// Progress Dialog
@@ -75,6 +75,7 @@ public class Login extends Definition implements OnClickListener{
 
 	// testing on Emulator:
 	private static final String LOGIN_URL = "http://172.16.84.76/task_manager/v1/login";
+	private static final String REGISTER_URL = "http://172.16.84.76/task_manager/v1/register";
 
 	// testing from a real server:
 	// private static final String LOGIN_URL =
@@ -104,7 +105,7 @@ public class Login extends Definition implements OnClickListener{
 		// Session Manager
         session = new SessionManager(getApplicationContext());
         
-        
+    //////Social login tools 
 		// VIEWS
 			tvInfo = (TextView) findViewById(R.id.tvInfo);
 			btLogin = (Button) findViewById(R.id.btLogin);
@@ -113,21 +114,23 @@ public class Login extends Definition implements OnClickListener{
 			ll = (LinearLayout) findViewById(R.id.LinearLayout1);
 			pbLoad = (ProgressBar) findViewById(R.id.pbLoad);
 			
-		// SHARED PREFERENCES
+		/*/ SHARED PREFERENCES
 			SharedPreferences sp = getSharedPreferences(Constant.PREF_STATUS, MODE_PRIVATE);
 			boolean status = sp.getBoolean(Constant.PREF_IS_LOGGED, false);
 			
 			if(status){
-				enableViews(false);
+				enableViews(true);
 				linkedInLogin(null);
 				facebookLogin(null);
 				googleplusLogin(null);
 			}
+			*/
+		//////Social login tools	
 			
 			
-		///////LOGIN NORMAL /////
+		//////LOGIN NORMAL /////
 			// setup input fields
-			user = (EditText) findViewById(R.id.email);
+			us = (EditText) findViewById(R.id.email);
 			pass = (EditText) findViewById(R.id.password);
 
 			// setup buttons
@@ -135,19 +138,18 @@ public class Login extends Definition implements OnClickListener{
 			mRegister = (TextView) findViewById(R.id.register);
 			mForget = (TextView) findViewById(R.id.forget);
 
-			// register listeners
-			mSubmit.setOnClickListener(this);
+			//Register and password recovery links
 			mRegister.setOnClickListener(this);
 			mForget.setOnClickListener(this);
 		///////LOGIN NORMAL /////	
 			
 	}
 	
-	
+	//Call enableviews to show or hide
 	public void enableViewsMainThread(final boolean status){
 		runOnUiThread(new Runnable(){
 			public void run(){
-				enableViews(status);
+				enableViews(true);
 			}
 		});
 	}
@@ -205,33 +207,28 @@ public class Login extends Definition implements OnClickListener{
 			}
 		}
 		
-		
+		User userReg = new User();
 		public class ProfileDataListener implements SocialAuthListener<Profile> {
 			@Override
 			public void onExecute(String plataform, Profile data) {
-				User user = new User();
-				user.setProviderId(data.getProviderId());
-				user.setValidatedId(data.getValidatedId());
-				user.setFirstName(data.getFirstName());
-				user.setLastName(data.getLastName());
-				user.setEmail(data.getEmail());
-				user.setCountry(data.getCountry());
-				user.setLanguage(data.getLanguage());
-				user.setLocation(data.getLocation());
-				user.setProfileImageURL(data.getProfileImageURL());
-				user.setGender(data.getGender());
-				user.setDisplayName(data.getDisplayName());
-				user.setFullName(data.getFullName());
-				user.setContactInfo(data.getContactInfo());
-				user.setBirthDate(data.getDob());
 				
-				// START ACTIVITY
-					if(cont == 0){
-						cont++;
-						Intent intent = new Intent(Login.this, ProfileActivity.class);
-						intent.putExtra("user", user);
-						startActivity(intent);
-					}
+				userReg.setProviderId(data.getProviderId());
+				userReg.setValidatedId(data.getValidatedId());
+				userReg.setFirstName(data.getFirstName());
+				userReg.setLastName(data.getLastName());
+				userReg.setEmail(data.getEmail());
+				userReg.setCountry(data.getCountry());
+				userReg.setLanguage(data.getLanguage());
+				userReg.setLocation(data.getLocation());
+				userReg.setProfileImageURL(data.getProfileImageURL());
+				userReg.setGender(data.getGender());
+				userReg.setDisplayName(data.getDisplayName());
+				userReg.setFullName(data.getFullName());
+				userReg.setContactInfo(data.getContactInfo());
+				userReg.setBirthDate(data.getDob());
+				
+				// Making Social login from server
+					new SocialLogin().execute();
 			}
 			
 			@Override
@@ -241,54 +238,124 @@ public class Login extends Definition implements OnClickListener{
 			}
 		}
 		
+		private String username;
+		private   String password;
 		
-		
-		/**
-	     * Event Handling for Individual menu item selected
-	     * Identify single menu item by it's id
-	     * */
-	    @Override
-	    public boolean onOptionsItemSelected(MenuItem item)
-	    {
-	         
-	        switch (item.getItemId())
-	        {
-	        case R.id.logout:
-	            // Single menu item is selected do something
-	            // Ex: launching new activity/screen or show alert message
-	            
-	            return true;
-	 
-	        case R.id.logar:
-	            Intent i = new Intent(this, Login.class);
-	            startActivity(i);
-	            return true;
-	 
-	        case R.id.rpassword:
-	            Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(""));
-	            startActivity(in);
-	            return true;
-	 
-	        case R.id.registar:
-	        	Intent inte = new Intent(Intent.ACTION_VIEW, Uri.parse("http://172.16.48.101/cvturismo/frontend/web/index.php?r=site%2Fsignup")); 
-	            startActivity(inte);
-	        	return true;
-	 
-	        case R.id.localizacao:
-	            
-	            return true;
-	 
-	        case R.id.lingua:
-	            
-	            return true;
-	        case R.id.sair:
-	            finish();
-	            return true;
-	 
-	        default:
-	            return super.onOptionsItemSelected(item);
-	        }
-	    }
+		// Social Login
+		class SocialLogin extends AsyncTask<String, String, String> {
+			
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+				pDialog = new ProgressDialog(Login.this);
+				pDialog.setMessage("Attempting login...");
+				pDialog.setIndeterminate(false);
+				pDialog.setCancelable(true);
+				pDialog.show();
+			}
+
+			
+			@Override
+			protected String doInBackground(String... arg0) {
+				// TODO Auto-generated method stub
+				int success;
+				username = userReg.getEmail().toString();
+				password = "teste";
+				// Check if username, password is filled				
+				if(username.trim().length() > 0 && password.trim().length() > 0){
+					try {
+						// Building Parameters
+						List<NameValuePair> params = new ArrayList<NameValuePair>();
+						params.add(new BasicNameValuePair("email", username));
+						params.add(new BasicNameValuePair("password", password));
+	
+						Log.d("request!", "starting");
+						// getting product details by making HTTP request
+						JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST",
+								params);
+	
+						// check your log for json response
+						Log.d("Login attempt", json.toString());
+	
+						// json success tag
+						success = json.getInt(TAG_SUCCESS);
+						if (success == 1) {
+							Log.d("Login Successful!", json.toString());
+							
+							// Save user data
+							User user = new User();
+							user.setFirstName(json.getString("firstName"));
+							user.setLastName(json.getString("lastName"));
+							user.setEmail(json.getString("email"));
+							user.setCountry(json.getString("country"));
+							user.setLanguage(json.getString("language"));
+							user.setLocation(json.getString("location"));
+							user.setProfileImageURL(json.getString("profileImage"));
+							// Save user session
+							session.createLoginSession(password, username);
+							// START ACTIVITY
+							Intent intent = new Intent(Login.this, ProfileActivity.class);
+							intent.putExtra("user", user);
+							startActivity(intent);
+							finish();
+							
+							return json.getString(TAG_MESSAGE);
+						} else {
+							// Building Parameters
+							params.add(new BasicNameValuePair("firstName", userReg.getFirstName()));
+							params.add(new BasicNameValuePair("lastName", userReg.getLastName()));
+							params.add(new BasicNameValuePair("country", userReg.getCountry()));
+							params.add(new BasicNameValuePair("language", userReg.getLanguage()));
+							params.add(new BasicNameValuePair("location", userReg.getLocation()));
+							params.add(new BasicNameValuePair("profileImage", userReg.getProfileImageURL()));
+							// getting product details by making HTTP request
+							JSONObject js = jsonParser.makeHttpRequest(REGISTER_URL, "POST",
+									params);
+							// json success tag
+							int sc = js.getInt(TAG_SUCCESS);
+							Log.d("rEEGISTERING!", js.toString());
+							if(sc == 1){
+								// Save user data
+								User user = new User();
+								user.setFirstName(json.getString("firstName"));
+								user.setLastName(json.getString("lastName"));
+								user.setEmail(json.getString("email"));
+								user.setCountry(json.getString("country"));
+								user.setLanguage(json.getString("language"));
+								user.setLocation(json.getString("location"));
+								user.setProfileImageURL(json.getString("profileImage"));
+								// Save user session
+								session.createLoginSession(password, username);
+								// START ACTIVITY
+								Intent i = new Intent(Login.this, ProfileActivity.class);
+								i.putExtra("user", user);
+								startActivity(i);
+								finish();
+								
+								return json.getString(TAG_MESSAGE);
+							}
+							
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				}
+				return null;
+			}
+			
+			
+			protected void onPostExecute(String file_url) {
+				// dismiss the dialog once product deleted
+				pDialog.dismiss();
+				if (file_url != null) {
+					Toast.makeText(Login.this, file_url, Toast.LENGTH_LONG).show();
+				}
+
+			}
+			
+			
+		}
+						
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
@@ -309,10 +376,7 @@ public class Login extends Definition implements OnClickListener{
 			default:
 				break;
 			}
-			
 		}
-		
-		
 		
 		class AttemptLogin extends AsyncTask<String, String, String> {
 			
@@ -326,61 +390,64 @@ public class Login extends Definition implements OnClickListener{
 				pDialog.show();
 			}
 
+			private String username;
+			private String password;
 			@Override
 			protected String doInBackground(String... arg0) {
 				// TODO Auto-generated method stub
 				int success;
-				String username = user.getText().toString();
-				String password = pass.getText().toString();
+				username = us.getText().toString();
+				password = pass.getText().toString();
 				// Check if username, password is filled				
 				if(username.trim().length() > 0 && password.trim().length() > 0){
-				try {
-					// Building Parameters
-					List<NameValuePair> params = new ArrayList<NameValuePair>();
-					params.add(new BasicNameValuePair("email", username));
-					params.add(new BasicNameValuePair("password", password));
-
-					Log.d("request!", "starting");
-					// getting product details by making HTTP request
-					JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST",
-							params);
-
-					// check your log for json response
-					Log.d("Login attempt", json.toString());
-
-					// json success tag
-					success = json.getInt(TAG_SUCCESS);
-					if (success == 1) {
-						Log.d("Login Successful!", json.toString());
-						// save user data
-						User user = new User();
-						user.setFirstName(json.getString("firstName"));
-						user.setLastName(json.getString("lastName"));
-						user.setEmail(json.getString("email"));
-						user.setCountry(json.getString("country"));
-						user.setLanguage(json.getString("language"));
-						user.setLocation(json.getString("location"));
-						user.setProfileImageURL(json.getString("profileImage"));
-						
-						
-						// Save user session
-						session.createLoginSession("Android Hive", "anroidhive@gmail.com");
-						// START ACTIVITY
-							if(cont == 0){
-								cont++;
-								Intent intent = new Intent(Login.this, ProfileActivity.class);
-								intent.putExtra("user", user);
-								startActivity(intent);
-							}
-						
-						return json.getString(TAG_MESSAGE);
-					} else {
-						Log.d("Login Failure!", json.getString(TAG_MESSAGE));
-						return json.getString(TAG_MESSAGE);
+					try {
+						// Building Parameters
+						List<NameValuePair> params = new ArrayList<NameValuePair>();
+						params.add(new BasicNameValuePair("email", username));
+						params.add(new BasicNameValuePair("password", password));
+	
+						Log.d("request!", "starting");
+						// getting product details by making HTTP request
+						JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST",
+								params);
+	
+						// check your log for json response
+						Log.d("Login attempt", json.toString());
+	
+						// json success tag
+						success = json.getInt(TAG_SUCCESS);
+						if (success == 1) {
+							Log.d("Login Successful!", json.toString());
+							// save user data
+							User user = new User();
+							user.setFirstName(json.getString("firstName"));
+							user.setLastName(json.getString("lastName"));
+							user.setEmail(json.getString("email"));
+							user.setCountry(json.getString("country"));
+							user.setLanguage(json.getString("language"));
+							user.setLocation(json.getString("location"));
+							user.setProfileImageURL(json.getString("profileImage"));
+							
+							
+							// Save user session
+							session.createLoginSession(password, username);
+							// START ACTIVITY
+								if(cont == 0){
+									cont++;
+									Intent intent = new Intent(Login.this, ProfileActivity.class);
+									intent.putExtra("user", user);
+									startActivity(intent);
+									finish();
+								}
+							
+							return json.getString(TAG_MESSAGE);
+						} else {
+							Log.d("Login Failure!", json.getString(TAG_MESSAGE));
+							return json.getString(TAG_MESSAGE);
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
 					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
 				}
 				return null;
 			}

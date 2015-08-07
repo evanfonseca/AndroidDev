@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_back">#ff0058e8</color>
+    <color name="minube">#ff90d400</color>
+    <color name="backgroung_app">#ff2f3239</color>
+    <color name="bg_votes">#ff666666</color>
+    <color name="light_blue">#ff0099cc</color>
+    <color name="red">#ffe01b4c</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="list_bg">#ff14171b</color>
+    <color name="list_bg_focus">#ff46494f</color>
+    <color name="list_separator">#ff282a2e</color>
+    <color name="text_color">#ff7d7d79</color>
+    <color name="text_color_green">#ff6eb400</color>
+    <color name="text_color_gray">#ffa1a2a4</color>
+    <color name="pic_comments_up_slider">#ff25282d</color>
+    <color name="txt_original_color">#ffbebebe</color>
+    <color name="minube_gray">#ffa9a9a9</color>
+    <color name="tabMedium">#ff2b2b2b</color>
+    <color name="tabDark">#ff000000</color>
+    <color name="tabTransparent">#10ffffff</color>
+    <color name="selection_text_color">#ffe9cb1f</color>
+    <color name="inapp_description_text">#ff878c91</color>
+    <color name="cat_button_unpress">#ff202226</color>
+    <color name="cat_button_press">#ff3c3d43</color>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/RootView" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/de.madvertise.android.sdk">
+    <LinearLayout android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent">
+        <include layout="@layout/header_bar" />
+        
+        <ScrollView android:id="@id/scrollView1" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content">
+            
+            <LinearLayout 
+                android:orientation="vertical" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent">
+                
+                <LinearLayout 
+                    android:orientation="vertical" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content">
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_ver_btn" />
+        
+        
+        
+
+    </LinearLayout>
+</RelativeLayout>

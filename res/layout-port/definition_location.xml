@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/RootView" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/de.madvertise.android.sdk">
+    <LinearLayout android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent">
+        <include layout="@layout/header_bar" />
+        
+        <ScrollView android:id="@id/scrollView1" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content">
+            
+            <LinearLayout 
+                android:orientation="vertical" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent">
+                
+                <LinearLayout 
+                    android:orientation="vertical" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content">
+                    
+                    <RelativeLayout 
+                        android:gravity="center_vertical" 
+                        android:autoLink="web" 
+                        android:orientation="vertical" 
+                        android:layout_width="fill_parent" 
+                        android:layout_height="70.0dip">
+                        <ImageButton android:background="@drawable/btn_ver_btn" 
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" />
+                        
+                        <LinearLayout 
+                            android:gravity="center" 
+                            android:layout_width="60.0dip" 
+                            android:layout_height="fill_parent">
+                            
+                            <ImageView 
+                                android:layout_gravity="center" 
+                                android:background="@drawable/btn_fav_clip" 
+                                android:layout_width="wrap_content" 
+                                android:layout_height="wrap_content" />
+                            
+                        </LinearLayout>
+                        <LinearLayout 
+                            android:gravity="center" 
+                            android:orientation="vertical" 
+                            android:id="@id/bt_ModoGPS_defLoc" 
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" 
+                            android:layout_marginLeft="60.0dip" 
+                            android:layout_marginRight="10.0dip">
+                            
+                            <TextView 
+                                android:textSize="18.0sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/white" 
+                                android:layout_width="fill_parent" 
+                                android:layout_height="wrap_content"
+                                android:text="@string/ModoGPS" 
+                                android:singleLine="true" />
+                            
+                        </LinearLayout>
+                    </RelativeLayout>
+                    
+                    <RelativeLayout 
+                        android:gravity="center_vertical"
+                        android:autoLink="web" 
+                        android:orientation="vertical" 
+                        android:layout_width="fill_parent" 
+                        android:layout_height="70.0dip" 
+                        android:layout_marginTop="1.0dip">
+                        
+                        <ImageButton 
+                            android:background="@drawable/btn_ver_btn" 
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" />
+                        
+                        <LinearLayout 
+                            android:gravity="center"
+                            android:layout_width="60.0dip" 
+                            android:layout_height="fill_parent">
+                            
+                            <ImageView 
+                                
+                                android:layout_gravity="center" 
+                                android:background="@drawable/btn_fav_clip" 
+                                android:layout_width="wrap_content" 
+                                android:layout_height="wrap_content" />
+                            
+                        </LinearLayout>
+                        
+                        <LinearLayout 
+                            android:gravity="center" 
+                            android:orientation="vertical" 
+                            android:id="@id/bt_ModoPerson_defLoc" 
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" 
+                            android:layout_marginLeft="60.0dip" 
+                            android:layout_marginRight="10.0dip">
+                            
+                            <TextView 
+                                android:textSize="18.0sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/white" 
+                                android:layout_width="fill_parent" 
+                                android:layout_height="wrap_content" 
+                                android:text="@string/ModoPeson" 
+                                android:singleLine="true" />
+                            
+                        </LinearLayout>
+                        
+                    </RelativeLayout>
+                     <RelativeLayout 
+                        android:gravity="center_vertical"
+                        android:autoLink="web" 
+                        android:orientation="vertical" 
+                        android:layout_width="fill_parent" 
+                        android:layout_height="70.0dip" 
+                        android:layout_marginTop="1.0dip">
+                        
+                        <ImageButton 
+                            android:background="@drawable/btn_ver_btn" 
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" />
+                        
+                        <LinearLayout 
+                            android:gravity="center"
+                            android:layout_width="60.0dip" 
+                            android:layout_height="fill_parent">
+                            
+                            <ImageView 
+                                
+                                android:layout_gravity="center" 
+                                android:background="@drawable/btn_fav_clip" 
+                                android:layout_width="wrap_content" 
+                                android:layout_height="wrap_content" />
+                            
+                        </LinearLayout>
+                        
+                        <LinearLayout 
+                            android:gravity="center" 
+                            android:orientation="vertical" 
+                            android:id="@id/sair"
+                            android:layout_width="fill_parent" 
+                            android:layout_height="fill_parent" 
+                            android:layout_marginLeft="60.0dip" 
+                            android:layout_marginRight="10.0dip">
+                            
+                            <TextView 
+                                android:textSize="18.0sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/white" 
+                                android:layout_width="fill_parent" 
+                                android:layout_height="wrap_content" 
+                                android:text="@string/sair" 
+                                android:singleLine="true" />
+                            
+                        </LinearLayout>
+                        
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_ver_btn" />
+
+    </LinearLayout>
+</RelativeLayout>

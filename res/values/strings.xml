@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CVTurismoMobile</string>
+    
+    
+    <string name="menu_settings">Settings</string>
+   
+	<!-- string ids for registration.xml -->
+   
+    <string name="username_textview">Username:</string>
+    <string name="password_textview">Password:</string>
+    <string name="submit">Submit</string>
+    <string name="email">Email</string>
+    <string name="remeber">Remeber-me</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register</string>
+    <string name="forget">Forget Password</string>
+    <string name="dont">Dont have account</string>
+    <string name="signhere">Sign Up Here</string>
+    
+       <string name="passc">Password</string>
+       <string name="emailc">Email</string>
+       <string name="namec">Nome</string>
+   	
+   	
+   	<string name="logf">Login with Facebook</string>	 
+    <string name="logl">Login with LinkedIn</string>
+     <string name="logg">Login with Google+</string>
+    
+    
+    
+  
+     
+    
+      <!-- string ids for localizacao.xml -->
+    
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="island">Ilha</string>
+    <string name="city">Cidade</string>
+    
+    <string name="definition">Definição</string>
+    <string name="deflocal">Definição de Localização</string>
+    <string name="rcpassword">Recuperar password</string>
+    <string name="altlingua">Alterar Lingua</string>
+    <string name="sair">Sair</string>
+    <string name="logout1">Logout</string>
+    <string name="register1">Registar</string>
+    
+    
+          <!-- string ids for main.xml -->
+
+    <string name="welcome">Benvindo</string>
+    <string name="pp">De viajantes para vijantes</string>
+    <string name="app_claim">De viajantes para viajantes</string>
+    <string name="google_maps_api_key">0zYkHasjJiV0Fpnv8Dnl3r8d0cGkUDz93dO2PLw</string>
+    <string name="pois">Lugares</string>
+    <string name="gallery">Galeria</string>
+    <string name="map">Mapa</string>
+    <string name="event">Eventos</string>
+    <string name="info">Info</string>
+    <string name="favorites">Favoritos</string>
+    <string name="inspiration">Inspire-se</string>
+    
+    <!-- Definition Location -->
+    
+    <string  name="ModoGPS">Modo GPS</string>
+     <string  name="ModoPeson">Modo Personalizado</string>
+    
+    
+</resources>

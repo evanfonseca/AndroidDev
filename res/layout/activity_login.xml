@@ -1,242 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent"
-	android:fillViewport="true">
-
-	<LinearLayout android:layout_width="match_parent"
-		android:layout_height="wrap_content" android:orientation="vertical">
-
-
-		<LinearLayout android:id="@+id/LinearLayout1"
-			android:layout_width="match_parent" android:layout_height="match_parent"
-			android:padding="10.0dip"
-			android:orientation="vertical">
-
-			<!-- Header Start -->
-	    <include layout="@layout/header_bar" />
-	      <!-- Header Ends -->
- 
-    
-	    <!--Social Login Starts -->	
-
-	    <LinearLayout
-	        android:id="@+id/LayoutSocial"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical" 
-	        android:padding="10.0dip">
-
-	        
-		    
-		    <TextView
-		        android:id="@+id/tvInfo"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text=""
-		        android:textColor="#000"
-		        android:layout_gravity="top|center_horizontal" />
-		    
-		    <Button
-		        android:id="@+id/btLogin"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/logl"
-		        android:background="#2778b7"
-		        android:textColor="#fff"
-		        android:textSize="13dp"
-		        android:padding="10dp"
-		        android:layout_margin="4dp"
-		        android:layout_gravity="center_horizontal"
-		        android:onClick="linkedInLogin" />
-		    
-		  <TextView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text=""
-		        android:textColor="#000"
-		        android:layout_gravity="top|center_horizontal" />
-		    
-		    <Button
-		        android:id="@+id/btLoginf"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="10dp"
-		        android:layout_margin="4dp"
-		        android:layout_gravity="center_horizontal"
-		        android:text="@string/logf"
-                 android:textColor="#fff"
-                 android:textSize="13dp"
-                 android:background="#2683c2"
-		         android:onClick="facebookLogin" />
-		    
-		    <TextView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text=""
-		        android:textColor="#000"
-		        android:layout_gravity="top|center_horizontal" />
-		    
-		    <Button
-		        android:id="@+id/btLoging"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="10dp"
-		        android:layout_margin="4dp"
-		        android:layout_gravity="center_horizontal"
-		        android:text="@string/logg"
-                 android:textColor="#fff"
-                 android:textSize="13dp"
-                 android:background="#eb543b"
-		        
-		        android:onClick="googleplusLogin" />
-		
-		    <ProgressBar
-		        android:id="@+id/pbLoad"
-		        android:layout_gravity="center"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:visibility="gone" />
-		    
-		    
-		    
-		    <TextView
-		        android:id="@+id/tv2"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text=""
-		        android:textColor="#000"
-		        android:layout_gravity="top|center_horizontal" />
-		    
-			<TextView
-				android:id="@+id/textView1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:gravity="center"
-				android:text="OR" />
-	    
-	    
-	    </LinearLayout>
-	    <!--Social Login Ends -->
-    
-    
-	    
-    
-     
-	     <!-- Login Form -->
-
-	     <LinearLayout
-	         android:id="@+id/LayouEmail"
-	         android:layout_width="fill_parent"
-	         android:layout_height="wrap_content"
-	         android:orientation="vertical" >
-		     
-		     <!-- Email Label -->
-		     <EditText
-				android:id="@+id/email"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="20dip"
-				android:layout_marginTop="5dip"
-				android:hint="@string/email"
-				android:singleLine="true" />
-		      
-		      <!-- Password Label -->
-			<EditText
-				android:id="@+id/password"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="5dip"
-				android:ems="10"
-				android:hint="@string/password_textview"
-				android:password="true"
-				android:singleLine="true" >
-				<requestFocus />
-			</EditText>
-	
-	          
-		     <TableRow  
-		          android:layout_width="wrap_content"
-		          android:layout_height="wrap_content"
-		          android:orientation="vertical"
-		          android:layout_margin="10dip"
-		          android:gravity="center">
-		          
-	              <CheckBox
-		              android:id="@+id/rememberMe"
-		              android:layout_width="wrap_content"
-		              android:layout_height="wrap_content" />
-	
-	              <TextView
-	                  android:id="@+id/textView2"
-	                  android:layout_width="wrap_content"
-	                  android:layout_height="wrap_content"
-	                  android:text=" " />
-	
-	              <TextView
-	                  android:layout_width="wrap_content"
-		         	  android:layout_height="wrap_content"
-		              android:text="@string/remeber" />
-	              
-			</TableRow>
-	        
-	          <!-- Login button -->
-	          <Button
-	              android:id="@+id/login"
-	              android:layout_width="match_parent"
-	              android:layout_height="wrap_content"
-	              android:layout_marginTop="10dip"
-	              android:text="@string/login" />
-		
-		</LinearLayout>          
-        
-	   <LinearLayout
-	       android:id="@+id/LayoutRegister"
-	       android:layout_width="fill_parent"
-	       android:layout_height="wrap_content"
-	       android:orientation="vertical" >
-            
-            <TextView
-			    android:id="@+id/forget"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:gravity="center"
-			    android:text="@string/forget"
-			    android:textColor="#00CCFF" />
-          
-          
-          <TableRow  
-	          android:layout_width="fill_parent"
-	          android:layout_height="wrap_content"
-	          android:orientation="vertical"
-	          android:layout_margin="10dip"
-	          android:gravity="center">
-	          
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/dont" />
-
-              <TextView
-                
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text=" " />
-
-              <TextView
-                  android:id="@+id/register"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/signhere"
-                  android:textColor="#00CCFF" />
-        </TableRow>
-        </LinearLayout>  
-    	</LinearLayout>
-         <!-- Footer Start -->
-         
-     	    <include layout="@layout/footer_bar" />
-
-      <!-- Footer Ends -->
-    
-	</LinearLayout>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout1" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/header_bar" />
+            <LinearLayout android:orientation="vertical" 
+                android:id="@id/LayoutSocial" 
+                android:padding="10.0dip" 
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content">
+                <TextView android:textColor="#ff000000"
+                     android:layout_gravity="top|center" 
+                     android:id="@id/tvInfo" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" 
+                     android:text="" />
+                <Button 
+                    android:textSize="13.0dip" 
+                    android:textColor="#ffffffff" 
+                    android:layout_gravity="center_horizontal" 
+                    android:id="@id/btLogin" 
+                    android:background="#ff2778b7"
+                     android:padding="10.0dip" 
+                     android:layout_width="fill_parent" 
+                     android:layout_height="wrap_content" 
+                     android:layout_margin="4.0dip" 
+                     android:text="@string/logl"
+                      android:onClick="linkedInLogin" />
+                <TextView android:textColor="#ff000000" 
+                    android:layout_gravity="top|center" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="" />
+                <Button 
+                    android:textSize="13.0dip" 
+                    android:textColor="#ffffffff" 
+                    android:layout_gravity="center_horizontal" 
+                    android:id="@id/btLoginf" 
+                    android:background="#ff2683c2" 
+                    android:padding="10.0dip" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:layout_margin="4.0dip" 
+                    android:text="@string/logf" 
+                    android:onClick="facebookLogin" />
+                <TextView android:textColor="#ff000000" 
+                    android:layout_gravity="top|center" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="" />
+                <Button android:textSize="13.0dip" 
+                    android:textColor="#ffffffff" 
+                    android:layout_gravity="center_horizontal" 
+                    android:id="@id/btLoging" 
+                    android:background="#ffeb543b" 
+                    android:padding="10.0dip" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:layout_margin="4.0dip" 
+                    android:text="@string/logg" 
+                    android:onClick="googleplusLogin" />
+                <ProgressBar 
+                    android:layout_gravity="center" 
+                    android:id="@id/pbLoad" 
+                    android:visibility="gone" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" />
+                <TextView 
+                    android:textColor="#ff000000" 
+                    android:layout_gravity="top|center"
+                     android:id="@id/tv2" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" 
+                     android:text="" />
+                <TextView android:gravity="center" 
+                    android:id="@id/textView1" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="OR" />
+            </LinearLayout>
+            <LinearLayout 
+                android:orientation="vertical" 
+                android:id="@id/LayouEmail" 
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content">
+                <EditText android:id="@id/email" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:layout_marginTop="5.0dip" 
+                    android:layout_marginBottom="20.0dip" 
+                    android:hint="@string/email" 
+                    android:singleLine="true">
+                    <requestFocus />
+                </EditText>
+                <EditText 
+                    android:id="@id/password"
+                     android:layout_width="fill_parent"
+                      android:layout_height="wrap_content" 
+                      android:layout_marginTop="5.0dip"
+                       android:hint="@string/password_textview" 
+                      android:ems="10" 
+                      android:password="true" 
+                      android:singleLine="true" />
+                <TableRow android:gravity="center"
+                     android:orientation="vertical" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content"
+                     android:layout_margin="10.0dip">
+                    <CheckBox 
+                         android:id="@id/rememberMe" 
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+                    <TextView android:id="@id/textView2" 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/remeber" />
+                </TableRow>
+                <Button 
+                    android:id="@id/login" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:layout_marginTop="10.0dip" 
+                    android:text="@string/login" />
+            </LinearLayout>
+            <LinearLayout 
+                android:orientation="vertical" 
+                android:id="@id/LayoutRegister" 
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content">
+                <TextView 
+                    android:textColor="#ff00ccff" 
+                    android:gravity="center" 
+                    android:id="@id/forget" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="@string/forget" />
+                <TableRow 
+                    android:gravity="center" 
+                    android:orientation="vertical" 
+                    android:layout_width="fill_parent" 
+                    android:layout_height="wrap_content" 
+                    android:layout_margin="10.0dip">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/dont" />
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text=" " />
+                    <TextView 
+                        android:textColor="#ff00ccff" 
+                        android:id="@id/register" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/signhere" />
+                </TableRow>
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/footer_bar" />
+    </LinearLayout>
 </ScrollView>

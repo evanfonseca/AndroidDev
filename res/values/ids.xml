@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item type="id" name="bt_sair_def">false</item>
+    <item type="id" name="bt_lingua_def">false</item>
+    <item type="id" name="bt_rpassword_def">false</item>
+    <item  type="id" name="bt_registar_def">false</item>
+    <item type="id" name="bt_location_def">false</item>
+    <item type="id" name="bt_logout_def">false</item>
+    <item  type="id" name="bt_login_def">false</item>
+    
+  
+    <item type="id" name="location">false</item>
+    <item type="id" name="event">false</item>
+    <item type="id" name="definition" >false</item>
+    <item type="id" name="gallery">false</item>
+    <item type="id" name="photo">false</item>
+    
+    <item type="id" name="tag_image_loader" />
+    <item type="id" name="author_avatar">false</item>
+    <item type="id" name="author_name">false</item>
+    <item type="id" name="author_bio">false</item>
+    
+    <item type="id" name="balloon_main_layout">false</item>
+    <item type="id" name="balloon_inner_layout">false</item>
+    <item type="id" name="balloon_item_title">false</item>
+    <item type="id" name="balloon_item_snippet">false</item>
+    
+    <item type="id" name="close_img_button">false</item>
+    <item type="id" name="fullscreen_custom_content">false</item>
+    <item type="id" name="error_console">false</item>
+    <item type="id" name="main_content">false</item>
+    <item type="id" name="RootView">false</item>
+    <item type="id" name="gridview">false</item>
+    <item type="id" name="progress">false</item>
+    <item type="id" name="linearLayout1">false</item>
+    <item type="id" name="image_thumb">false</item>
+    <item type="id" name="progreso">false</item>
+    <item type="id" name="LinearLayout1">false</item>
+    <item type="id" name="photo_content">false</item>
+    <item type="id" name="cant_pics">false</item>
+    <item type="id" name="linearLayout2">false</item>
+    <item type="id" name="user_avatar">false</item>
+    <item type="id" name="poi_name">false</item>
+    <item type="id" name="user_name">false</item>
+    
+    <item type="id" name="background_image">false</item>
+    <item type="id" name="progress_bar">false</item>
+    <item type="id" name="app_title">false</item>
+    <item type="id" name="poi_number">false</item>
+    <item type="id" name="imageView1">false</item>
+    <item type="id" name="Rlay11">false</item>
+    <item type="id" name="list">false</item>
+    <item type="id" name="alert">false</item>
+    <item type="id" name="poi_scroll">false</item>
+    <item type="id" name="menu_app">false</item>
+    <item type="id" name="download_button_green">false</item>
+    <item type="id" name="downloaded_button_gray">false</item>
+    <item type="id" name="inapp_description">false</item>
+    <item type="id" name="new_experiences_text">false</item>
+    <item type="id" name="inapps_rows_containter">false</item>
+    <item type="id" name="fake_inapp_row">false</item>
+    <item type="id" name="fake_inapp_row_2">false</item>
+    <item type="id" name="fake_inapp_row_3">false</item>
+    <item type="id" name="author_layer_main">false</item>
+    <item type="id" name="author">false</item>
+    <item type="id" name="main_backhground">false</item>
+    <item type="id" name="poi_image_layer">false</item>
+    <item type="id" name="poi_image">false</item>
+    <item type="id" name="cant_experiences">false</item>
+    <item type="id" name="cant_media">false</item>
+    <item type="id" name="web_banner">false</item>
+    <item type="id" name="app_name">false</item>
+    <item type="id" name="app_claim">false</item>
+    <item type="id" name="pois_button">false</item>
+    <item type="id" name="foo1">false</item>
+    <item type="id" name="textView1">false</item>
+    
+    <item type="id" name="gallery_button">false</item>
+    <item type="id" name="cidade_button">false</item>
+    <item type="id" name="place_button">false</item>
+    <item type="id" name="event_button">false</item>
+    <item type="id" name="definition_button">false</item>
+    <item type="id" name="map">false</item>
+    
+    
+    
+    <item type="id" name="foo4">false</item>
+    <item type="id" name="textView2">false</item>
+    <item type="id" name="map_button">false</item>
+    <item type="id" name="foo3">false</item>
+    <item type="id" name="textView3">false</item>
+    <item type="id" name="linearLayout3">false</item>
+    <item type="id" name="info_button">false</item>
+    <item type="id" name="imageButton1">false</item>
+    <item type="id" name="textView4">false</item>
+    <item type="id" name="favorites_button">false</item>
+    <item type="id" name="foo5">false</item>
+    <item type="id" name="textView5">false</item>
+    <item type="id" name="inapps_button">false</item>
+    <item type="id" name="foo6">false</item>
+    <item type="id" name="textView6">false</item>
+    
+    <item type="id" name="download_button">false</item>
+    <item type="id" name="download_icon">false</item>
+    <item type="id" name="download_content_text">false</item>
+    <item type="id" name="downloaded_text">false</item>
+    
+    <item type="id" name="lay_ads">false</item>
+    <item type="id" name="banner">false</item>
+    <item type="id" name="banner_close">false</item>
+    
+    
+    <item type="id" name="lay_download_content">false</item>
+    <item type="id" name="ok_download_button">false</item>
+    <item type="id" name="cancel_download_button">false</item>
+    <item type="id" name="mapa_container">false</item>
+    <item type="id" name="my_location_button">false</item>
+    <item type="id" name="mapview">false</item>
+    <item type="id" name="selection_ribbon">false</item>
+    <item type="id" name="from_inapp">false</item>
+    <item type="id" name="madad">false</item>
+    <item type="id" name="image_action">false</item>
+    <item type="id" name="play_video">false</item>
+    <item type="id" name="phone_action">false</item>
+    <item type="id" name="category">false</item>
+    <item type="id" name="phone">false</item>
+    <item type="id" name="favorite_button">false</item>
+    <item type="id" name="photos_button">false</item>
+    <item type="id" name="cant_pictures_text">false</item>
+    <item type="id" name="url_button">false</item>
+    <item type="id" name="call_action">false</item>
+    <item type="id" name="experiences_container">false</item>
+    
+    
+    <item type="id" name="btn_ver_btn">false</item>
+    <item type="id" name="btn_ver">false</item>
+    
+    <item type="id" name="btn_ver_number">false</item>
+    <item type="id" name="btn_comer_btn">false</item>
+    <item type="id" name="btn_comer">false</item>
+    <item type="id" name="btn_comer_number">false</item>
+    <item type="id" name="btn_dormir_btn">false</item>
+    <item type="id" name="btn_dormir">false</item>
+    <item type="id" name="btn_dormir_number">false</item>
+    <item  type="id" name="btn_favorites_btn">false</item>
+    <item type="id" name="btn_fav">false</item>
+    <item type="id" name="btn_fav_number">false</item>
+    
+    <item type="id" name="btn_ver_monomento_sitio_btn">false</item>
+    <item type="id" name="btn_restaurante_bar_btn">false</item>
+    <item type="id" name="btn_centro_comercial_btn">false</item>
+    <item type="id" name="btn_servico_btn">false</item>
+    <item type="id" name="btn_ponto_interece_btn">false</item>
+    <item type="id" name="btn_hoteis_pensoes_btn">false</item>
+    
+    <item type="id" name="btn_cafe_btn">false</item>
+    <item type="id" name="btn_lanche_btn">false</item>
+    <item type="id" name="btn_pizza_btn">false</item>
+    <item type="id" name="btn_rest_btn">false</item>
+    <item type="id" name="btn_bares_noturno_btn">false</item>
+    
+    
+    
+    <item type="id" name="bt_ModoPerson_defLoc">false</item>
+    <item type="id" name="bt_ModoGPS_defLoc">fase</item>
+    <item type="id" name="bt_ModoPerson_inf">false</item>
+    <item type="id" name="bt_ModoGPS_inf">fase</item>
+    
+    <item type="id" name="LL4">false</item>
+    <item type="id" name="LL5">false</item>
+    <item type="id" name="experience_title">false</item>
+    <item type="id" name="linearLayout4">false</item>
+    <item type="id" name="experience_text">false</item>
+    <item type="id" name="content">false</item>
+    <item type="id" name="loader">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="title">false</item>
+    <item type="id" name="logo">false</item>
+    <item type="id" name="linearLayout11">false</item>
+    <item type="id" name="progress_indicator">false</item>
+    <item type="id" name="web_view">false</item>
+    
+    
+    <item type="id" name="LayoutSocialLayoutSocial1">false</item>
+    <item type="id" name="LayoutSocial">false</item>
+    <item type="id" name="tvInfo">false</item>
+    <item type="id" name="btLogin">false</item>
+    <item type="id" name="pbLoad">false</item>
+    <item type="id" name="btLoginf">false</item>
+    <item type="id" name="btLoging">false</item>
+    <item type="id" name="tv2">false</item>
+    <item type="id" name="LayouEmail">false</item>
+    <item type="id" name="email">false </item>
+    <item type="id" name="password">false</item>
+    <item type="id" name="rememberMe">false</item>
+    <item type="id" name="login">false</item>
+    <item type="id" name="LayoutRegister">false</item>
+    <item type="id" name="forget">false</item>
+    <item type="id" name="register">false</item>
+    
+    <item type="id" name="ivProfile">false</item>
+   <item type="id"  name="sair">false</item>
+   <item type="id"  name="scrollView1">false</item>
+   <item type="id"  name="footer">false</item>
+   <item type="id"  name="selected_imageview">false</item>
+   <item type="id"  name="gallery_relative_layout">false</item>
+   <item type="id"  name="left_arrow_imageview">false</item>
+   <item type="id"  name="right_arrow_imageview">false</item>
+    
+    
+</resources>

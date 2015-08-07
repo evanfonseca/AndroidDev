@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/RootView" android:background="@android:color/white" android:focusable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header_bar" />
+    <RelativeLayout android:gravity="center" android:orientation="horizontal" android:id="@id/Rlay11" android:focusable="false" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ListView android:id="@id/list" android:background="@color/list_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/list_bg" android:layout_above="@id/madad" />
+        <ProgressBar android:id="@id/progress" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" style="?android:attr/progressBarStyleLarge" />
+        <LinearLayout android:orientation="vertical" android:id="@id/alert" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/alert_favs" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="20.0dip" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/no_fav" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

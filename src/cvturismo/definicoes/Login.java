@@ -14,18 +14,13 @@ import org.brickred.socialauth.android.SocialAuthListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.exemplosocialoauth.R;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -34,7 +29,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import cvturismo.socialoauth.domain.Constant;
+import br.exemplosocialoauth.R;
 import cvturismo.socialoauth.domain.User;
 
 public class Login extends Definition implements OnClickListener{
@@ -49,10 +44,7 @@ public class Login extends Definition implements OnClickListener{
 	private Button btLogin, btLoginf,btLoging;
 	LinearLayout ll;
 	private ProgressBar pbLoad;
-	private int cont = 0;
-	
-	
-	
+		
 	///////LOGIN NORMAL /////
 	private TextView mRegister, mForget;
 	private EditText us, pass;
@@ -76,6 +68,7 @@ public class Login extends Definition implements OnClickListener{
 	// testing on Emulator:
 	private static final String LOGIN_URL = "http://172.16.84.76/task_manager/v1/login";
 	private static final String REGISTER_URL = "http://172.16.84.76/task_manager/v1/register";
+
 
 	// testing from a real server:
 	// private static final String LOGIN_URL =
@@ -105,7 +98,7 @@ public class Login extends Definition implements OnClickListener{
 		// Session Manager
         session = new SessionManager(getApplicationContext());
         
-    //////Social login tools 
+        
 		// VIEWS
 			tvInfo = (TextView) findViewById(R.id.tvInfo);
 			btLogin = (Button) findViewById(R.id.btLogin);
@@ -114,8 +107,8 @@ public class Login extends Definition implements OnClickListener{
 			ll = (LinearLayout) findViewById(R.id.LinearLayout1);
 			pbLoad = (ProgressBar) findViewById(R.id.pbLoad);
 			
-		/*/ SHARED PREFERENCES
-			SharedPreferences sp = getSharedPreferences(Constant.PREF_STATUS, MODE_PRIVATE);
+		// SHARED PREFERENCES
+		/*	SharedPreferences sp = getSharedPreferences(Constant.PREF_STATUS, MODE_PRIVATE);
 			boolean status = sp.getBoolean(Constant.PREF_IS_LOGGED, false);
 			
 			if(status){
@@ -125,10 +118,9 @@ public class Login extends Definition implements OnClickListener{
 				googleplusLogin(null);
 			}
 			*/
-		//////Social login tools	
 			
 			
-		//////LOGIN NORMAL /////
+		///////LOGIN NORMAL /////
 			// setup input fields
 			us = (EditText) findViewById(R.id.email);
 			pass = (EditText) findViewById(R.id.password);
@@ -138,18 +130,19 @@ public class Login extends Definition implements OnClickListener{
 			mRegister = (TextView) findViewById(R.id.register);
 			mForget = (TextView) findViewById(R.id.forget);
 
-			//Register and password recovery links
+			// register listeners
+			mSubmit.setOnClickListener(this);
 			mRegister.setOnClickListener(this);
 			mForget.setOnClickListener(this);
 		///////LOGIN NORMAL /////	
 			
 	}
 	
-	//Call enableviews to show or hide
+	
 	public void enableViewsMainThread(final boolean status){
 		runOnUiThread(new Runnable(){
 			public void run(){
-				enableViews(true);
+				enableViews(status);
 			}
 		});
 	}
@@ -283,19 +276,11 @@ public class Login extends Definition implements OnClickListener{
 							Log.d("Login Successful!", json.toString());
 							
 							// Save user data
-							User user = new User();
-							user.setFirstName(json.getString("firstName"));
-							user.setLastName(json.getString("lastName"));
-							user.setEmail(json.getString("email"));
-							user.setCountry(json.getString("country"));
-							user.setLanguage(json.getString("language"));
-							user.setLocation(json.getString("location"));
-							user.setProfileImageURL(json.getString("profileImage"));
+							String key = json.getString("apiKey");
 							// Save user session
-							session.createLoginSession(password, username);
+							session.createLoginSession(key);
 							// START ACTIVITY
 							Intent intent = new Intent(Login.this, ProfileActivity.class);
-							intent.putExtra("user", user);
 							startActivity(intent);
 							finish();
 							
@@ -315,21 +300,13 @@ public class Login extends Definition implements OnClickListener{
 							int sc = js.getInt(TAG_SUCCESS);
 							Log.d("rEEGISTERING!", js.toString());
 							if(sc == 1){
-								// Save user data
-								User user = new User();
-								user.setFirstName(json.getString("firstName"));
-								user.setLastName(json.getString("lastName"));
-								user.setEmail(json.getString("email"));
-								user.setCountry(json.getString("country"));
-								user.setLanguage(json.getString("language"));
-								user.setLocation(json.getString("location"));
-								user.setProfileImageURL(json.getString("profileImage"));
+								String key = js.getString("apiKey");
 								// Save user session
-								session.createLoginSession(password, username);
+								session.createLoginSession(key);
 								// START ACTIVITY
-								Intent i = new Intent(Login.this, ProfileActivity.class);
-								i.putExtra("user", user);
-								startActivity(i);
+								Intent intent = new Intent(Login.this, ProfileActivity.class);
+								intent.putExtra("user", userReg);
+								startActivity(intent);
 								finish();
 								
 								return json.getString(TAG_MESSAGE);
@@ -418,27 +395,15 @@ public class Login extends Definition implements OnClickListener{
 						success = json.getInt(TAG_SUCCESS);
 						if (success == 1) {
 							Log.d("Login Successful!", json.toString());
-							// save user data
-							User user = new User();
-							user.setFirstName(json.getString("firstName"));
-							user.setLastName(json.getString("lastName"));
-							user.setEmail(json.getString("email"));
-							user.setCountry(json.getString("country"));
-							user.setLanguage(json.getString("language"));
-							user.setLocation(json.getString("location"));
-							user.setProfileImageURL(json.getString("profileImage"));
-							
-							
+							// save user API_KEY data
+							String apiKey = json.getString("apiKey");
+														
 							// Save user session
-							session.createLoginSession(password, username);
+							session.createLoginSession(apiKey);
 							// START ACTIVITY
-								if(cont == 0){
-									cont++;
-									Intent intent = new Intent(Login.this, ProfileActivity.class);
-									intent.putExtra("user", user);
-									startActivity(intent);
-									finish();
-								}
+								Intent intent = new Intent(Login.this, ProfileActivity.class);
+								startActivity(intent);
+								finish();
 							
 							return json.getString(TAG_MESSAGE);
 						} else {

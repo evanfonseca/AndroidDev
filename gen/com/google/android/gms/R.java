@@ -44,7 +44,6 @@ public final class R {
 		public static final int uiZoomControls = 0x7f010011;
 		public static final int uiZoomGestures = 0x7f010012;
 		public static final int useViewLifecycle = 0x7f010013;
-		public static final int windowTransitionStyle = 0x7f010025;
 		public static final int zOrderOnTop = 0x7f010014;
 	}
 	public static final class color {
@@ -103,38 +102,37 @@ public final class R {
 		public static final int common_signin_btn_text_normal_light = 0x7f020047;
 		public static final int common_signin_btn_text_pressed_dark = 0x7f020048;
 		public static final int common_signin_btn_text_pressed_light = 0x7f020049;
-		public static final int ic_plusone_medium_off_client = 0x7f02006c;
-		public static final int ic_plusone_small_off_client = 0x7f02006d;
-		public static final int ic_plusone_standard_off_client = 0x7f02006e;
-		public static final int ic_plusone_tall_off_client = 0x7f02006f;
-		public static final int powered_by_google_dark = 0x7f0200af;
-		public static final int powered_by_google_light = 0x7f0200b0;
+		public static final int ic_plusone_medium_off_client = 0x7f02006e;
+		public static final int ic_plusone_small_off_client = 0x7f02006f;
+		public static final int ic_plusone_standard_off_client = 0x7f020070;
+		public static final int ic_plusone_tall_off_client = 0x7f020071;
+		public static final int powered_by_google_dark = 0x7f0200b3;
+		public static final int powered_by_google_light = 0x7f0200b4;
 	}
 	public static final class id {
-		public static final int adjust_height = 0x7f0a0087;
-		public static final int adjust_width = 0x7f0a0088;
-		public static final int book_now = 0x7f0a0097;
-		public static final int buyButton = 0x7f0a0093;
-		public static final int buy_now = 0x7f0a0098;
-		public static final int buy_with_google = 0x7f0a0099;
-		public static final int classic = 0x7f0a009b;
-		public static final int donate_with_google = 0x7f0a009a;
-		public static final int grayscale = 0x7f0a009c;
-		public static final int holo_dark = 0x7f0a008e;
-		public static final int holo_light = 0x7f0a008f;
-		public static final int hybrid = 0x7f0a008a;
-		public static final int match_parent = 0x7f0a0095;
-		public static final int monochrome = 0x7f0a009d;
-		public static final int none = 0x7f0a0089;
-		public static final int normal = 0x7f0a008b;
-		public static final int production = 0x7f0a0090;
-		public static final int sandbox = 0x7f0a0091;
-		public static final int satellite = 0x7f0a008c;
-		public static final int selectionDetails = 0x7f0a0094;
-		public static final int slide = 0x7f0a009e;
-		public static final int strict_sandbox = 0x7f0a0092;
-		public static final int terrain = 0x7f0a008d;
-		public static final int wrap_content = 0x7f0a0096;
+		public static final int adjust_height = 0x7f0a00b4;
+		public static final int adjust_width = 0x7f0a00b5;
+		public static final int book_now = 0x7f0a00c4;
+		public static final int buyButton = 0x7f0a00c0;
+		public static final int buy_now = 0x7f0a00c5;
+		public static final int buy_with_google = 0x7f0a00c6;
+		public static final int classic = 0x7f0a00c8;
+		public static final int donate_with_google = 0x7f0a00c7;
+		public static final int grayscale = 0x7f0a00c9;
+		public static final int holo_dark = 0x7f0a00bb;
+		public static final int holo_light = 0x7f0a00bc;
+		public static final int hybrid = 0x7f0a00b7;
+		public static final int match_parent = 0x7f0a00c2;
+		public static final int monochrome = 0x7f0a00ca;
+		public static final int none = 0x7f0a00b6;
+		public static final int normal = 0x7f0a00b8;
+		public static final int production = 0x7f0a00bd;
+		public static final int sandbox = 0x7f0a00be;
+		public static final int satellite = 0x7f0a00b9;
+		public static final int selectionDetails = 0x7f0a00c1;
+		public static final int strict_sandbox = 0x7f0a00bf;
+		public static final int terrain = 0x7f0a00ba;
+		public static final int wrap_content = 0x7f0a00c3;
 	}
 	public static final class integer {
 		public static final int google_play_services_version = 0x7f080000;
@@ -163,8 +161,6 @@ public final class R {
 		public static final int common_google_play_services_notification_needs_installation_title = 0x7f060007;
 		public static final int common_google_play_services_notification_needs_update_title = 0x7f060008;
 		public static final int common_google_play_services_notification_ticker = 0x7f060006;
-		public static final int common_google_play_services_sign_in_failed_text = 0x7f060024;
-		public static final int common_google_play_services_sign_in_failed_title = 0x7f060023;
 		public static final int common_google_play_services_unknown_issue = 0x7f06001b;
 		public static final int common_google_play_services_unsupported_text = 0x7f06001d;
 		public static final int common_google_play_services_unsupported_title = 0x7f06001c;
@@ -174,13 +170,12 @@ public final class R {
 		public static final int common_open_on_phone = 0x7f060021;
 		public static final int common_signin_button_text = 0x7f06001f;
 		public static final int common_signin_button_text_long = 0x7f060020;
-		public static final int commono_google_play_services_api_unavailable_text = 0x7f060022;
 		public static final int create_calendar_message = 0x7f060005;
 		public static final int create_calendar_title = 0x7f060004;
 		public static final int decline = 0x7f060003;
 		public static final int store_picture_message = 0x7f060001;
 		public static final int store_picture_title = 0x7f060000;
-		public static final int wallet_buy_button_place_holder = 0x7f060025;
+		public static final int wallet_buy_button_place_holder = 0x7f060022;
 	}
 	public static final class style {
 		public static final int Theme_IAPTheme = 0x7f050000;
@@ -194,8 +189,6 @@ public final class R {
 		public static final int AdsAttrs_adSize = 0;
 		public static final int AdsAttrs_adSizes = 1;
 		public static final int AdsAttrs_adUnitId = 2;
-		public static final int[] CustomWalletTheme = { 0x7f010025 };
-		public static final int CustomWalletTheme_windowTransitionStyle = 0;
 		public static final int[] LoadingImageView = { 0x7f010003, 0x7f010004, 0x7f010005 };
 		public static final int LoadingImageView_circleCrop = 2;
 		public static final int LoadingImageView_imageAspectRatio = 1;

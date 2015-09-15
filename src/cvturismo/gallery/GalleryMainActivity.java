@@ -17,6 +17,8 @@ public class GalleryMainActivity  extends Definition implements OnClickListener 
       super.onCreate(savedInstanceState);
       setContentView(R.layout.gallery_activity_main);
       
+      
+      
       GridView gridview = (GridView) findViewById(R.id.gridview);
       gridview.setAdapter(new GalleryImageAdapter(this));
       

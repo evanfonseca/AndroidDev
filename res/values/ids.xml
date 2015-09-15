@@ -207,6 +207,13 @@
    <item type="id"  name="gallery_relative_layout">false</item>
    <item type="id"  name="left_arrow_imageview">false</item>
    <item type="id"  name="right_arrow_imageview">false</item>
-    
+   
+   
+   <item type="id"  name="Nome">false</item>
+   <item type="id" name="telefone">false</item>
+   <item type="id" name="endereco">false</item>
+   <item type="id" name="linkweb">false</item>
+   
+   <item type="id"  name="desc_lugar">false</item>
     
 </resources>

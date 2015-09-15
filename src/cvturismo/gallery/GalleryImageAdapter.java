@@ -9,7 +9,9 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 public class GalleryImageAdapter extends BaseAdapter {
-   private Context mContext;
+   
+	
+	private Context mContext;
 
    // Constructor
    public GalleryImageAdapter(Context c) {

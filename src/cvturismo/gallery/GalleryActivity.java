@@ -3,6 +3,7 @@ package cvturismo.gallery;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -18,7 +19,7 @@ import android.widget.ImageView.ScaleType;
 import br.exemplosocialoauth.R;
 import cvturismo.definicoes.Definition;
 
-public class GalleryActivity extends Definition implements OnClickListener{
+public class GalleryActivity extends Activity implements OnClickListener{
 
 	private ImageView selectedImageView;
 
@@ -129,6 +130,8 @@ public class GalleryActivity extends Definition implements OnClickListener{
 		galImageAdapter = new GalleryAdapter(this, drawables);
 
 		gallery.setAdapter(galImageAdapter);
+		
+		
 
 		if (drawables.size() > 0) {
 

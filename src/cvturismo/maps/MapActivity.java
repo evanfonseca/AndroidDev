@@ -22,14 +22,25 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import br.exemplosocialoauth.R;
+
+
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -43,8 +54,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import cvturismo.cidade.parsers.DBController;
+import cvturismo.principal.MMainActivity;
+
 
 public class MapActivity extends FragmentActivity implements
 		GoogleApiClient.ConnectionCallbacks,
@@ -57,21 +73,102 @@ public class MapActivity extends FragmentActivity implements
 	private LocationRequest mLocationRequest;
 	private long UPDATE_INTERVAL = 60000;  /* 60 secs */
 	private long FASTEST_INTERVAL = 5000; /* 5 secs */
+	private static final int GPS_ERRORDIALOG_REQUEST = 9001;
+	
+	private double City_LAT = 15.989753,
+	City_LNG =-24.072148;
+	private static final float DEFAULTZOOM = 15, ZOOM1=8;
 	 
 	  static final LatLng HAMBURG = new LatLng(16.0231249,-23.9886474);
 	  static final LatLng KIEL = new LatLng(16.0231249,-23.9886474);
 	  GoogleMap mGoogleMap;
+	  
+	 DBController controller ;
+	 
+	 LatLng cityCoord;
+	 int idcidade,idc=0;
+	 String strcoord;
+	 
 	/*
 	 * Define a request code to send to Google Play services This code is
 	 * returned in Activity.onActivityResult
 	 */
-	private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+	 private static final int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9002;
+	
+	
+	SharedPreferences app_preferences;
+	SharedPreferences.Editor editor;
+	
 
+	Location loc;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) { 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.map_activity);
+		
+		app_preferences= PreferenceManager.getDefaultSharedPreferences(MapActivity.this);
+		idc=app_preferences.getInt("shIdc", 0);
+		
+		
+		controller=new DBController(this);
+		
+		Intent i1 = getIntent();  
+		idcidade = i1.getIntExtra("idcidade",0);
+		
+		
+		
+		Toast.makeText(this, "idc: "+idc+" idcidade: "+idcidade, Toast.LENGTH_SHORT).show();
+		
+		
+		
+		
+		MapStateManager mgr = new MapStateManager(this);
+		if(idc!=idcidade)
+						 {
+							mgr.cleanSharedPreference();
+						 }
+		
 
+		if (servicesOK()) {
+								setContentView(R.layout.map_activity);
+			if (initMap()) 
+							{
+								Toast.makeText(this, "Ready to map!", Toast.LENGTH_SHORT).show();
+								if (idcidade!=0){
+													cityCoord=controller.getLocationCity(idcidade);
+													strcoord =  cityCoord.toString();
+													Toast.makeText(this, "get this: "+strcoord, Toast.LENGTH_SHORT).show();
+													
+													gotoLocation(cityCoord, DEFAULTZOOM);
+													map.setMyLocationEnabled(true);
+													
+
+												}
+								else
+												{
+													gotoLocation(City_LAT, City_LNG, ZOOM1);
+													map.setMyLocationEnabled(true);
+													
+													 
+												}
+							}
+			else 			
+							{
+								Toast.makeText(this, "Map not available!", Toast.LENGTH_SHORT).show();
+							}
+			}
+		else
+			{
+				setContentView(R.layout.map_activity);
+			}
+		
+
+		
+
+		
+		
+		/*
 		mapFragment = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map));
 		
 		if (mapFragment != null) {
@@ -87,7 +184,7 @@ public class MapActivity extends FragmentActivity implements
 			mGoogleMap = mapFragment.getMap();
 			
 			// Enabling MyLocation button for the Google Map
-			mGoogleMap.setMyLocationEnabled(true);
+			//mGoogleMap.setMyLocationEnabled(true);
 			
 			// Setting OnClickEvent listener for the GoogleMap
 			mGoogleMap.setOnMapClickListener(new OnMapClickListener() {
@@ -104,7 +201,7 @@ public class MapActivity extends FragmentActivity implements
 		} else {
 			Toast.makeText(this, "Error - Map Fragment was null!!", Toast.LENGTH_SHORT).show();
 		}
-
+*/
 		
 		
 	}
@@ -217,7 +314,7 @@ public class MapActivity extends FragmentActivity implements
         if (map != null) {
             // Map is ready
             Toast.makeText(this, "Map Fragment was loaded properly!", Toast.LENGTH_SHORT).show();
-            map.setMyLocationEnabled(true);
+            //map.setMyLocationEnabled(true);
 
             // Now that map has loaded, let's get our location!
             mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -238,6 +335,43 @@ public class MapActivity extends FragmentActivity implements
         }
     }
 
+    
+    
+    
+    private boolean initMap() {
+		if (map == null) {
+			SupportMapFragment mapFrag =
+					(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+			map = mapFrag.getMap();
+		}
+		return (map != null);
+	}
+    
+    
+    
+    @SuppressWarnings("unused")
+	private void gotoLocation(double lat, double lng) {
+		LatLng ll = new LatLng(lat, lng);
+		CameraUpdate update = CameraUpdateFactory.newLatLng(ll);
+		map.moveCamera(update);
+	}
+
+	private void gotoLocation(double lat, double lng,
+			float zoom) {
+		LatLng ll = new LatLng(lat, lng);
+		CameraUpdate update = CameraUpdateFactory.newLatLngZoom(ll, zoom);
+		map.moveCamera(update);
+	}
+    
+	
+	private void gotoLocation(LatLng ll,
+			float zoom) {
+		CameraUpdate update = CameraUpdateFactory.newLatLngZoom(ll, zoom);
+		map.moveCamera(update);
+	}
+    
+    
+    
     /*
      * Called when the Activity becomes visible.
     */
@@ -250,6 +384,7 @@ public class MapActivity extends FragmentActivity implements
     /*
 	 * Called when the Activity is no longer visible.
 	 */
+    /*
 	@Override
 	protected void onStop() {
 		// Disconnecting the client invalidates it.
@@ -257,7 +392,7 @@ public class MapActivity extends FragmentActivity implements
             mGoogleApiClient.disconnect();
         }
 		super.onStop();
-	}
+	}*/
 
 	/*
 	 * Handle results returned to the FragmentActivity by Google Play services
@@ -408,5 +543,91 @@ public class MapActivity extends FragmentActivity implements
 			return mDialog;
 		}
 	}
+	
+	public boolean servicesOK() {
+		int isAvailable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+		
+		if (isAvailable == ConnectionResult.SUCCESS) {
+			return true;
+		}
+		else if (GooglePlayServicesUtil.isUserRecoverableError(isAvailable)) {
+			Dialog dialog = GooglePlayServicesUtil.getErrorDialog(isAvailable, this, GPS_ERRORDIALOG_REQUEST);
+			dialog.show();
+		}
+		else {
+			Toast.makeText(this, "Can't connect to Google Play services", Toast.LENGTH_SHORT).show();
+		}
+		return false;
+	}
+	
+	
+	
+	 // Options Menu (ActionBar Menu)
+ 	@Override
+ 	public boolean onCreateOptionsMenu(Menu menu) {
+ 		// Inflate the menu; this adds items to the action bar if it is present.
+ 		getMenuInflater().inflate(R.menu.mapmenu, menu);
+ 		return true;
+ 	}
+ 	
+ 	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+		case R.id.mapTypeNone:
+			map.setMapType(GoogleMap.MAP_TYPE_NONE);
+			break;
+		case R.id.mapTypeNormal:
+			map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+			break;
+		case R.id.mapTypeSatellite:
+			map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+			break;
+		case R.id.mapTypeTerrain:
+			map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+			break;
+		case R.id.mapTypeHybrid:
+			map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+			break;
+
+		default:
+			break;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+ 	@Override
+	protected void onStop() {
+		super.onStop();
+			idc=idcidade;
+			editor = app_preferences.edit();
+		    editor.putInt("shIdc", idc);
+		    editor.commit(); // Very important
+		
+		MapStateManager mgr = new MapStateManager(this);
+		mgr.saveMapState(map);
+		
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		idc=idcidade;
+		editor = app_preferences.edit();
+	    editor.putInt("shIdc", idc);
+	    editor.commit(); // Very important
+		
+		MapStateManager mgr = new MapStateManager(this);
+		CameraPosition position = mgr.getSavedCameraPosition();
+		if (position != null) {
+			CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
+			map.moveCamera(update);
+			//			This is part of the answer to the code challenge
+			map.setMapType(mgr.getSavedMapType());
+		}
+	}
+
 
 }

@@ -68,6 +68,11 @@
             android:name="cvturismo.principal.MainActivity"
             android:label="@string/app_name" >
         </activity>
+        
+         <activity
+            android:name="cvturismo.principal.MMainActivity">
+            
+        </activity>
        
           <activity android:name="cvturismo.principal.SingleListItem" >
               
@@ -77,12 +82,21 @@
           <activity android:name="cvturismo.principal.ListViewActivity" >
               
           </activity>
-          <activity android:name="cvturismo.principal.Category_selector" >
+          <activity android:name="cvturismo.principal.Select_Category" >
               
           </activity>
           
-          <activity android:name="cvturismo.principal.SubCategory_selector" >
+          <activity android:name="cvturismo.principal.Select_SubCategory" >
               
+          </activity>
+          
+          <activity android:name="cvturismo.principal.InfoCidadeActivity" >
+          </activity>
+          
+          <activity android:name="cvturismo.principal.CidadeActivity" >
+          </activity>
+          
+          <activity android:name="cvturismo.principal.Teste" >
           </activity>
           
   <!-- __________________________Galeria__________________________ --> 
@@ -92,7 +106,12 @@
           
            <activity android:name="cvturismo.gallery.GalleryActivity" >
           </activity>
+          
+          <activity android:name="cvturismo.gallery.Galeria" >
+          </activity>
          
+          <activity android:name="cvturismo.gallery.GaleriaActivity" >
+          </activity>
     
   <!-- __________________________Maps__________________________--> 
   
@@ -117,7 +136,11 @@
             android:name="cvturismo.cidade.parsers.InfoActivityCidade">
         </activity>
          <activity
-            android:name="cvturismo.cidade.parsers.InfoActivityLugar">
+            android:name="cvturismo.cidade.parsers.ActivityListViewLugar">
+        </activity>
+        
+        <activity
+            android:name="cvturismo.cidade.parsers.ActivityInfoLugar">
         </activity>
    
     </application>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/basic_list_item_enabled"
+    android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btn_desc_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/see_desc_city"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="1.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btn_hist_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/see_hist_city"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="1.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btn_geo_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/see_geo_city"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="1.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btn_clima_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/clima_cidade"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="1.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/bnt_eventos_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/event"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="1.0dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/bnt_contactos_uteis_cidade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/btn_ver_btn" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/contac_util_cidade"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="1.0dip"
+                android:layout_marginLeft="6.0dip"
+                android:layout_marginRight="6.0dip"
+                android:layout_marginTop="4.0dip"
+                
+                android:layout_weight="6.85"
+                android:background="@drawable/basic_list_item_enabled"
+                android:orientation="vertical" >
+
+                <ScrollView
+                    android:id="@+id/scrollView2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/T_V_CarregaTexto"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Texto Aqui"
+                        android:textColor="@color/white"
+                        android:textSize="16.0sp" />
+                    
+                    
+                </ScrollView>
+                
+                
+            </RelativeLayout>
+           
+		    <RelativeLayout 
+		        android:orientation="horizontal" 
+		        android:id="@id/gallery_relative_layout" 
+		        android:layout_width="fill_parent" 
+		        android:layout_height="150.0dip" 
+		        android:layout_alignParentBottom="true">
+		        
+		        <ImageView 
+		            android:id="@id/left_arrow_imageview" 
+		            android:layout_width="wrap_content" 
+		            android:layout_height="wrap_content" 
+		            android:layout_marginLeft="15.0dip" 
+		            android:src="@drawable/arrow_left_disabled" 
+		            android:layout_centerVertical="true" />
+		        
+		        <Gallery 
+		            android:id="@id/gallery" 
+		            android:layout_width="0.0dip" 
+		            android:layout_height="150.0dip" 
+		            android:layout_marginLeft="20.0dip" 
+		            android:layout_marginRight="20.0dip" 
+		            android:spacing="20.0dip" 
+		            android:layout_toLeftOf="@id/right_arrow_imageview" 
+		            android:layout_toRightOf="@id/left_arrow_imageview" />
+		        
+		        <ImageView 
+		            android:id="@id/right_arrow_imageview" 
+		            android:layout_width="wrap_content" 
+		            android:layout_height="wrap_content" 
+		            android:layout_marginRight="15.0dip" 
+		            android:src="@drawable/arrow_right_enabled" 
+		            android:layout_alignParentRight="true" 
+		            android:layout_centerVertical="true" />
+		        
+		    </RelativeLayout>
+        </LinearLayout>
+
+</LinearLayout>

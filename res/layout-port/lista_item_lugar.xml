@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/basic_list_item_enabled"
+    android:orientation="horizontal" >
+
+     <ImageView
+        android:id="@+id/ivLugar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+		android:padding="5dp" />
+
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    
+    <TextView
+            android:id="@+id/tvLugar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/lugar"
+            android:textColor="@color/white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@id/desc_lugar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2.0dip"
+            android:singleLine="true"
+            android:text="Descrição"
+            android:textColor="@color/text_color_gray"
+            android:textSize="14.0sp" />
+	</LinearLayout>
+</LinearLayout>

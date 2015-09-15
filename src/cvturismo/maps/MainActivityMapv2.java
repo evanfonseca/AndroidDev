@@ -1,5 +1,6 @@
 package cvturismo.maps;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,9 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.exemplosocialoauth.R;
 
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,6 +30,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivityMapv2 extends FragmentActivity {
+	
 	private SupportMapFragment mapFrag;
 	private GoogleMap map;
 	private Marker marker;
@@ -34,6 +39,7 @@ public class MainActivityMapv2 extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map_activity);
+		
 		
 		GoogleMapOptions options = new GoogleMapOptions();
 		options.zOrderOnTop(true);
@@ -122,13 +128,13 @@ public class MainActivityMapv2 extends FragmentActivity {
 					ll.addView(tv);
 					
 					Button bt = new Button(MainActivityMapv2.this);
-					bt.setText("Botão");
+					bt.setText("Botï¿½o");
 					bt.setBackgroundColor(Color.RED);
 					bt.setOnClickListener(new Button.OnClickListener(){
 
 						@Override
 						public void onClick(View v) {
-							Log.i("Script", "Botão clicado");
+							Log.i("Script", "Botï¿½o clicado");
 						}
 						
 					});
@@ -191,6 +197,11 @@ public class MainActivityMapv2 extends FragmentActivity {
 		
 		marker = map.addMarker(options);
 	}
+	
+	
+	
+	
+	
 }
 
 

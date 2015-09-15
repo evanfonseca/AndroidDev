@@ -38,9 +38,10 @@
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="island">Ilha</string>
-    <string name="city">Cidade</string>
+    <string name="city">A Cidade</string>
     
     <string name="definition">Definição</string>
+    <string name="localizar">Localizar</string>
     <string name="deflocal">Definição de Localização</string>
     <string name="rcpassword">Recuperar password</string>
     <string name="altlingua">Alterar Lingua</string>
@@ -52,8 +53,8 @@
           <!-- string ids for main.xml -->
 
     <string name="welcome">Benvindo</string>
-    <string name="pp">De viajantes para vijantes</string>
-    <string name="app_claim">De viajantes para viajantes</string>
+    <string name="pp">Seja benvindo!</string>
+    <string name="app_claim">Seja benvindo!</string>
     <string name="google_maps_api_key">0zYkHasjJiV0Fpnv8Dnl3r8d0cGkUDz93dO2PLw</string>
     <string name="pois">Lugares</string>
     <string name="gallery">Galeria</string>
@@ -67,6 +68,15 @@
     
     <string  name="ModoGPS">Modo GPS</string>
      <string  name="ModoPeson">Modo Personalizado</string>
+     <string name="NomeCidade">NomeCidade</string>
+     <string name="IlhaCidade">IlhaCidade</string>
+     <string name="Descricao">Descricao</string>
+     <string name="see_desc_city">Breve Descrição</string>
+     <string name="see_hist_city">Historia</string>
+     <string name="clima_cidade">Ver Clima</string>
+     <string name="see_geo_city">Geografia</string>
+     <string name="contac_util_cidade">Contactos Uteis</string>
     
-    
+     <!-- Lugar -->
+    <string  name="lugar">Lugar</string>	
 </resources>
